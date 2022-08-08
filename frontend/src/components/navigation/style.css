@@ -58,6 +58,9 @@ nav > .add-task-wrapper{
 .add-task-icon{
   /* padding-right: 2px; */
   cursor: pointer;
+  width: 4.62px;
+  height: 20px;
+  color: #828FA3;
 }
 
 
