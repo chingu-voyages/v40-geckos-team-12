@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-  background-color: #2b2c37;
+  background-color: ${(props) => props.theme.main};
   color: #fff;
   display: grid;
 `;
 
 export const CardTitle = styled.h3`
-  color: #635fc7;
+  color: ${(props) => props.theme.fontColor};
 `;
 
 export const CardDescription = styled.p`
-  color: #828fa3;
+  color: ${(props) => props.theme.fontColor};
 `;
