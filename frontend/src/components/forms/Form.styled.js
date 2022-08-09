@@ -57,7 +57,7 @@ export const StyledInput = styled.input`
   margin-top: 0.5rem;
   color: ${(props) => props.theme.fontColor};
   cursor: pointer;
-  &:hover {
+  &:focus {
     outline: none;
     border: 1px solid ${(props) => props.theme.fontColorHover};
   }
@@ -65,11 +65,16 @@ export const StyledInput = styled.input`
 
 export const StyledTextArea = styled.textarea`
   color: ${(props) => props.theme.fontColor};
+  cursor: pointer;
   border-radius: 4px;
   width: 100%;
   font-size: 13px;
   line-height: 23px;
   margin-top: 0.5rem;
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.fontColorHover};
+  }
 `;
 export const StyledButton = styled.button`
   color: ${(props) =>
@@ -100,5 +105,15 @@ export const StyledButton = styled.button`
   }
 `;
 
-export const StyledSelect = styled.select``;
-export const StyledOption = styled.option``;
+export const StyledSelect = styled.select`
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 0.5rem;
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.fontColorHover};
+  }
+`;
+export const StyledOption = styled.option`
+  color: ${(props) => props.theme.labelColor};
+`;
