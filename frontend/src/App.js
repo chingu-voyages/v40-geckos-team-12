@@ -1,21 +1,19 @@
 import React from "react";
-import { Column } from "./components";
+import './style.css'
+import { Column, SidebarContainer } from "./components";
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/themes";
 import { selectIsLightTheme } from "./features/slices/themeSlice/themeSlice";
 
-import { toggleTheme } from "./features/slices/themeSlice/themeSlice";
-
 function App() {
-  const dispatch = useDispatch();
   const isLightTheme = useSelector(selectIsLightTheme);
 
   return (
     <>
-      <div style={{ display: "grid" }}>
-        <button onClick={() => dispatch(toggleTheme())}>Toggle</button>
+      <div style={{ display: "grid"}}>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
+          <SidebarContainer />
           <div>sidebar</div>
           <Column />
           <Column />
