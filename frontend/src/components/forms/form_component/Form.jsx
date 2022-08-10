@@ -1,43 +1,93 @@
-import React from "react";
-import {
-  FormTextArea,
-  FormLabel,
-  FormInput,
-  FormButton,
-  FormSelect,
-  FormHeader,
-} from "../../../components";
-import { StyledForm } from "../Form.styled";
+import React, { useState } from "react";
 
-import { LabelInputContainer, StyledFormContainer } from "../Form.styled";
+import {
+  LabelInputContainer,
+  StyledFormContainer,
+  StyledInput,
+  StyledLabel,
+  StyledTextArea,
+  StyledSelect,
+  StyledOption,
+  StyledButton,
+  StyledFormHeader,
+  StyledForm,
+} from "../Form.styled";
 const Form = () => {
+  const [newTaskData, setNewTaskData] = useState({
+    title: "",
+    description: "",
+    subtasks: [],
+    status: "",
+  });
+  const [subTask, setSubTask] = useState("");
+
+  const handleSubTask = () => {
+    setNewTaskData({
+      ...newTaskData,
+      subtasks: [...newTaskData.subtasks, subTask],
+    });
+    setSubTask("");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(newTaskData);
+  };
   return (
     <StyledFormContainer>
-      <FormHeader text="Add New Task" />
-      <StyledForm>
+      <StyledFormHeader>Add New Task</StyledFormHeader>
+      <StyledForm onSubmit={handleSubmit}>
         <LabelInputContainer>
-          <FormLabel text="Title" />
-          <FormInput type="text" />
+          <StyledLabel>Title</StyledLabel>
+          <StyledInput
+            type="text"
+            value={newTaskData.title}
+            onChange={(e) => {
+              setNewTaskData({ ...newTaskData, title: e.target.value });
+            }}
+          />
         </LabelInputContainer>
 
         <LabelInputContainer>
-          <FormLabel text="Description" />
-          <FormTextArea />
+          <StyledLabel>Description</StyledLabel>
+          <StyledTextArea
+            value={newTaskData.description}
+            onChange={(e) => {
+              setNewTaskData({ ...newTaskData, description: e.target.value });
+            }}
+          >
+            {newTaskData.description}
+          </StyledTextArea>
         </LabelInputContainer>
 
         <LabelInputContainer>
-          <FormLabel text="SubTasks" />
-          <FormInput type="text" />
-          <FormInput type="text" />
+          <StyledLabel>Subtasks</StyledLabel>
+          <StyledInput
+            value={subTask}
+            onChange={(e) => {
+              setSubTask(e.target.value);
+            }}
+            type="text"
+          />
         </LabelInputContainer>
 
-        <FormButton createTask={false} text="Add New Subtask" />
+        <StyledButton type="button" onClick={handleSubTask} createTask={false}>
+          Add New Subtask
+        </StyledButton>
 
         <LabelInputContainer>
-          <FormLabel text="Status" />
-          <FormSelect />
+          <StyledLabel text="Status">Status</StyledLabel>
+          <StyledSelect
+            value={newTaskData.status}
+            onChange={(e) => {
+              setNewTaskData({ ...newTaskData, status: e.target.value });
+            }}
+          >
+            <StyledOption>Todo</StyledOption>
+            <StyledOption>Doing</StyledOption>
+            <StyledOption>Done</StyledOption>
+          </StyledSelect>
         </LabelInputContainer>
-        <FormButton createTask={true} text="Create Task" />
+        <StyledButton createTask={true}>Create Task </StyledButton>
       </StyledForm>
     </StyledFormContainer>
   );
