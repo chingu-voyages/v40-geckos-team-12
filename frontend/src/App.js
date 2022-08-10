@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Form } from "./components";
+import { Form } from "./components";
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/themes";
