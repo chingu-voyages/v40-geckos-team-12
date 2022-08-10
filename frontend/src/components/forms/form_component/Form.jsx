@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "features/slices/tasksSlice/tasksSlice";
 
 import {
   LabelInputContainer,
@@ -20,7 +22,7 @@ const Form = () => {
     status: "",
   });
   const [subTask, setSubTask] = useState("");
-
+  const dispatch = useDispatch();
   const handleSubTask = () => {
     setNewTaskData({
       ...newTaskData,
@@ -30,7 +32,13 @@ const Form = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(newTaskData);
+    dispatch(addTask(newTaskData));
+    setNewTaskData({
+      title: "",
+      description: "",
+      subtasks: [],
+      status: "",
+    });
   };
   return (
     <StyledFormContainer>

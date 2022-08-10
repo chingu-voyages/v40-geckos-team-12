@@ -19,7 +19,6 @@ export const StyledFormContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
   border: 1px solid rgba(0, 0, 0, 0.3);
   width: 480px;
-  height: 675px;
   left: 480px;
   top: 175px;
   border-radius: 5px;
@@ -27,13 +26,11 @@ export const StyledFormContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 480px;
-    height: 481px;
     left: 144px;
     top: 272px;
   }
   @media (max-width: 480px) {
     width: 343px;
-    height: 659px;
     left: 16px;
     top: 156px;
   }
@@ -68,6 +65,7 @@ export const StyledTextArea = styled.textarea`
   cursor: pointer;
   border-radius: 4px;
   width: 100%;
+  padding: 10px;
   font-size: 13px;
   line-height: 23px;
   margin-top: 0.5rem;
