@@ -4,12 +4,10 @@ export const CardContainer = styled.div`
   background-color: ${(props) => props.theme.main};
   color: #fff;
   display: grid;
-  background: #2B2C37;
   width: 280px;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1015);
-
 `;
 
 export const CardTitle = styled.h3`
@@ -21,7 +19,6 @@ export const CardTitle = styled.h3`
   line-height: 19px;
   letter-spacing: 0px;
   text-align: left;
-
 `;
 
 export const CardDescription = styled.p`
@@ -33,5 +30,4 @@ export const CardDescription = styled.p`
   line-height: 15px;
   letter-spacing: 0px;
   text-align: left;
-
 `;
