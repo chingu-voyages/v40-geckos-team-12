@@ -1,4 +1,3 @@
-import Card from "./card/Card";
-import Column from "./column/Column";
+import Form from "../components/forms/form_component/Form";
 
-export { Card, Column };
+export { Form };
