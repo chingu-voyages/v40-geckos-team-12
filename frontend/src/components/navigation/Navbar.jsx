@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
