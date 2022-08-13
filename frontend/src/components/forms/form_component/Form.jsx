@@ -40,6 +40,7 @@ const Form = () => {
       status: "",
     });
   };
+
   return (
     <StyledFormContainer>
       <StyledFormHeader>Add New Task</StyledFormHeader>

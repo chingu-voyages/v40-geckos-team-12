@@ -7,27 +7,19 @@ import {
 } from "../cardModal/CardModal.styled";
 
 
-const Checkbox = ({task}) => {
+const Checkbox = ({task, handleCheck, checked}) => {
 
-    const subtasks = task.subtasks;
-    const [check, setCheck] = React.useState(false);
+const subtasks = task.subtasks;
 
-    function handleCheck(){
-
-        setCheck(!check);
-        console.log(check);
-
-    }
-    
 
   return (
    <>    
    {subtasks.length && subtasks.map((subtask, index) => {
     return (
      <Label key={index}>
-        <HiddenCheckBox />
-        <StyledCheckbox onClick={handleCheck} />
-        <LabelText>{subtask}</LabelText>
+        <HiddenCheckBox onChange={handleCheck} value={subtask} />
+        <StyledCheckbox checkActive={checked.includes(subtask) ? true : false} />
+        <LabelText checkActive={checked.includes(subtask) ? true : false} >{subtask}</LabelText>
     </Label>
     )
    })}

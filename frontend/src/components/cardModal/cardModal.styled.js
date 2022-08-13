@@ -72,7 +72,7 @@ export const StyledCheckbox = styled.div`
   height: 16px;
   border: 1px solid #828FA3;
   background: ${(props) => props.theme.main};
-  border-radius: 3px;
+  border-radius: 4px;
   transition: all 150ms;
 `
 
@@ -86,31 +86,11 @@ export const Label = styled.label`
 `
 
 export const LabelText = styled.span`
-
+color: #000;
 font-size: 13px;
 width: 100%;
 border-radius: 4px;
-
-  ${(props) => {
-    switch (props.theme) {
-      case "darkMode":
-        return `
-          color: ${props.theme.fontColor};
-          ${StyledCheckbox}:checked + && {
-            color: ${props.theme.secondFontColor};
-            text-decoration: line-through;
-          }
-        `;
-      default:
-        return `
-          color: ${props.theme.fontColor};
-          ${StyledCheckbox}:checked + && {
-            color: ${props.theme.secondFontColor};
-            text-decoration: line-through;
-          }
-        `;
-    }
-  }}
+text-decoration: ${(props) => props.checkActive ? 'line-through' : 'none'};
 `;
 
 export const StatusContainer = styled.div``;
