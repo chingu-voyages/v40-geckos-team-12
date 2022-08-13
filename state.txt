@@ -22,3 +22,16 @@ state: {
         addTask:
         fromTodotoDoing:
         fromDoingtoDone:
+
+
+
+        Redux object shape
+         {
+      id: 0,
+      title: "",
+      description: "",
+      subTasks: [{}],
+      todo: true,
+      doing: false,
+      done: false,
+    },

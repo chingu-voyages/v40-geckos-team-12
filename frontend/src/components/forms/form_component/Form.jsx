@@ -22,6 +22,7 @@ const Form = () => {
     status: "",
   });
   const [subTask, setSubTask] = useState("");
+
   const dispatch = useDispatch();
   const handleSubTask = () => {
     setNewTaskData({
@@ -78,7 +79,11 @@ const Form = () => {
           />
         </LabelInputContainer>
 
-        <StyledButton type="button" onClick={handleSubTask} createTask={false}>
+        <StyledButton
+          type="button"
+          onClick={() => handleSubTask()}
+          createTask={false}
+        >
           Add New Subtask
         </StyledButton>
 

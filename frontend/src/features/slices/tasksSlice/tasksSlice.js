@@ -10,7 +10,7 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, { payload }) => {
-      console.log("tion", payload);
+      console.log("Hey, I am running", payload);
       state.tasks.push({ id: uuidv4(), ...payload });
     },
     removeTask: (state, action) => {
