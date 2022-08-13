@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   tasks: [{
-    title: "Card title",
-    description: "Task description",
-    subtasks: ['subtask one', 'subtask 2', 'subtask 3'],
+    title: "Research pricing points of various competitors and trial different business models",
+    description: "We know what we're planning to build for version one. Now we need to finalise the first pricing model we'll use. Keep iterating the subtasks until we have a coherent proposition.",
+    subtasks: ['Research competitor pricing and business models', 'Outline a business model that works for our solution', 'Talk to potential customers about our proposed solution and ask for fair price expectancy'],
     status: "",
   }],
 };
