@@ -1,7 +1,7 @@
-import React from 'react';
-import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import "./style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   return (
@@ -11,12 +11,15 @@ const Navbar = () => {
           <span className="logo">Platform Launch</span>
         </div>
         <div className="add-task-wrapper">
-          <p className="add-task">+ Add New Task</p>
-          <FontAwesomeIcon className="add-task-icon" icon={faEllipsisVertical}/>
+          <button className="add-task">+ Add New Task</button>
+          <FontAwesomeIcon
+            className="add-task-icon"
+            icon={faEllipsisVertical}
+          />
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

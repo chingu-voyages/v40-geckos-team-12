@@ -1,66 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,800;1,700&display=swap");
 
-header{
+header {
   height: 97px;
   width: 1140px;
   background: #ffffff;
   margin-left: auto;
 }
 
-nav{
+nav {
   display: flex;
   align-items: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  /* background-color: red; */
+  font-family: "Plus Jakarta Sans", sans-serif;
   height: 100%;
   justify-content: space-between;
 }
 
-nav > .add-task-wrapper{
+nav > .add-task-wrapper {
   display: flex;
-  /* margin-left: auto; */
   padding-right: 32px;
-  width: 192.62px;
-  height: 48px; 
   align-items: center;
 }
 
-.logo-wrapper{
+.logo-wrapper {
   margin-left: 24px;
-  /* width: 190px; */
   height: 30px;
 }
 
-.logo{
+.logo {
   color: #000112;
-  /* width: auto; */
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-.add-task{
+.add-task {
   width: 165px;
   padding: 13px 24px 13px 24px;
   color: #ffffff;
   font-weight: 700;
   font-size: 15px;
-  line-height: 19px; 
-  background: #635FC7;
+  line-height: 19px;
+  background: #635fc7;
   border-radius: 24px;
-  mix-blend-mode: normal;
-  opacity: 0.25;
   margin-right: 24px;
   cursor: pointer;
+  width: 100%;
+  border: none;
 }
 
-.add-task-icon{
-  /* padding-right: 2px; */
+.add-task-icon {
   cursor: pointer;
   width: 4.62px;
   height: 20px;
-  color: #828FA3;
+  color: #828fa3;
 }
-
-
