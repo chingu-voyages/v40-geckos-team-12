@@ -28,7 +28,6 @@ export const KebabIcon = styled(Kebab)`
   width: 50px;
 `;
 
-
 export const TitleKebabContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -50,6 +49,40 @@ export const SubTaskTitle = styled.p`
   font-size: 13px;
 `;
 
-export const CheckboxLabel = styled.div`
+export const Input = styled.input.attrs({ type: "checkbox" })``;
 
+export const Label = styled.label`
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
 `
+export const LabelText = styled.span`
+
+font-size: 13px;
+padding: 1em;
+background-color: ${(props) => props.theme.subTaskBG};
+width: 100%;
+border-radius: 4px;
+
+  ${(props) => {
+    switch (props.theme) {
+      case "darkMode":
+        return `
+          color: ${props.theme.fontColor};
+          ${Input}:checked + && {
+            color: ${props.theme.secondFontColor};
+            text-decoration: line-through;
+          }
+        `;
+      default:
+        return `
+          color: ${props.theme.fontColor};
+          ${Input}:checked + && {
+            color: ${props.theme.secondFontColor};
+            text-decoration: line-through;
+          }
+        `;
+    }
+  }}
+`;
