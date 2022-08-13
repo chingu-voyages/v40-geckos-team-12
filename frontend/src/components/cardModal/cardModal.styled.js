@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import {ReactComponent as Kebab} from '../../assets/icon-vertical-ellipsis.svg';
+import iconCheck from '../../assets/icon-check.svg';
 
 export const ModalWrapper = styled.div`
   background-color: ${(props) => props.theme.modalBackDrop};
@@ -71,7 +72,10 @@ export const StyledCheckbox = styled.div`
   width: 16px;
   height: 16px;
   border: 1px solid #828FA3;
-  background: ${(props) => props.theme.main};
+  background: ${(props) => props.checkActive ? props.theme.fontColorHover : props.theme.main};
+  background-image: ${(props) => props.checkActive ? `url(${iconCheck})` : 'none'};
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 4px;
   transition: all 150ms;
 `
@@ -82,14 +86,18 @@ export const Label = styled.label`
   gap: 8px;
   margin-bottom: 8px;
   padding: .75em;
+  border-radius: 5px;
   background-color: ${(props) => props.theme.subTaskBG};
+
+  &:hover {
+    background-color: ${(props) => props.theme.labelHover};
+  }
 `
 
 export const LabelText = styled.span`
-color: #000;
+color: ${(props) => props.checkActive ? props.theme.secondFontColor : props.theme.fontColor};
 font-size: 13px;
 width: 100%;
-border-radius: 4px;
 text-decoration: ${(props) => props.checkActive ? 'line-through' : 'none'};
 `;
 

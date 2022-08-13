@@ -4,6 +4,7 @@ export const lightTheme = {
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
   labelColor: "#828FA3",
+  labelHover: "#A8A4FF",
 
   //createSubTask colors
   createSubtaskBtnBG: "#F0EFFA",
