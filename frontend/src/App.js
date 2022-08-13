@@ -1,6 +1,10 @@
 import React from "react";
+
 import { Column } from "./components";
-import Navbar from './components/navigation/Navbar';
+import Navbar from "./components/navigation/Navbar";
+
+import { Form } from "./components";
+
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/themes";
@@ -15,13 +19,14 @@ function App() {
   return (
     <>
       <div style={{ display: "grid" }}>
-        <button onClick={() => dispatch(toggleTheme())}>Toggle</button>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <div>sidebar</div>
           <Navbar />
           <Column />
           <Column />
           <Column />
+
+          <Form />
         </ThemeProvider>
       </div>
     </>
