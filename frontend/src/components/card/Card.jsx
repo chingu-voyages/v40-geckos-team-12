@@ -5,8 +5,8 @@ const Card = () => {
   return (
     <>
       <CardContainer>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>Ut porttitor orci nec eros maximus bibendum. Sed lobortis massa a rutrum tincidunt.</CardTitle>
+        <CardDescription>Aliquam erat volutpat. Fusce congue est et ante venenatis facilisis. In vestibulum dui velit, at feugiat leo tempus at. Quisque quis pellentesque neque.</CardDescription>
       </CardContainer>
     </>
   );
