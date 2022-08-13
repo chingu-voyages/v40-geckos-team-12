@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Column } from "./components";
 import Navbar from "./components/navigation/Navbar";
 
 import { Form } from "./components";
@@ -22,9 +21,6 @@ function App() {
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <div>sidebar</div>
           <Navbar />
-          <Column />
-          <Column />
-          <Column />
 
           <Form />
         </ThemeProvider>
