@@ -49,19 +49,45 @@ export const SubTaskTitle = styled.p`
   font-size: 13px;
 `;
 
-export const Input = styled.input.attrs({ type: "checkbox" })``;
+export const SubTaskContainer = styled.div`
+  padding: 1em 0;
+`;
+
+export const HiddenCheckBox = styled.input.attrs({ type: "checkbox" })`
+  border: 0;
+  clip: rect(0 0 0 0);
+  clippath: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+`;
+
+export const StyledCheckbox = styled.div`
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #828FA3;
+  background: ${(props) => props.theme.main};
+  border-radius: 3px;
+  transition: all 150ms;
+`
 
 export const Label = styled.label`
   align-items: center;
   display: flex;
   gap: 8px;
   margin-bottom: 8px;
+  padding: .75em;
+  background-color: ${(props) => props.theme.subTaskBG};
 `
+
 export const LabelText = styled.span`
 
 font-size: 13px;
-padding: 1em;
-background-color: ${(props) => props.theme.subTaskBG};
 width: 100%;
 border-radius: 4px;
 
@@ -70,7 +96,7 @@ border-radius: 4px;
       case "darkMode":
         return `
           color: ${props.theme.fontColor};
-          ${Input}:checked + && {
+          ${StyledCheckbox}:checked + && {
             color: ${props.theme.secondFontColor};
             text-decoration: line-through;
           }
@@ -78,11 +104,36 @@ border-radius: 4px;
       default:
         return `
           color: ${props.theme.fontColor};
-          ${Input}:checked + && {
+          ${StyledCheckbox}:checked + && {
             color: ${props.theme.secondFontColor};
             text-decoration: line-through;
           }
         `;
     }
   }}
+`;
+
+export const StatusContainer = styled.div``;
+
+export const StyledLabel = styled.label`
+  color: ${(props) => props.theme.labelColor};
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  display: block;
+`;
+
+export const StyledSelect = styled.select`
+  width: 100%;
+  padding: .75em;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+    border: 1px solid ${(props) => props.theme.fontColorHover};
+  }
+`;
+
+export const StyledOption = styled.option`
+  color: ${(props) => props.theme.labelColor};
 `;
