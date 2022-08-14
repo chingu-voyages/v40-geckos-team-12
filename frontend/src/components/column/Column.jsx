@@ -2,10 +2,10 @@ import React from "react";
 import { Card } from "../../components";
 import { StyledColumn } from "./Column.styled";
 
-const Column = () => {
+const Column = ({handleCardModalToggle}) => {
   return (
     <StyledColumn>
-      <Card />
+      <Card handleCardModalToggle={handleCardModalToggle}/>
     </StyledColumn>
   );
 };

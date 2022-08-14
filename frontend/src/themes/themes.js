@@ -16,7 +16,7 @@ export const lightTheme = {
 
   //Modal Background color
   modalBG: "#FFF",
-  modalBackDrop: 'rgba(151, 151, 151, 0.8)',
+  modalBackDrop: 'rgba(151, 151, 151)',
 
   //Modal subtask background
   subTaskBG: '#E4EBFA',

@@ -4,6 +4,7 @@ import iconCheck from '../../assets/icon-check.svg';
 
 export const ModalWrapper = styled.div`
   background-color: ${(props) => props.theme.modalBackDrop};
+  opacity: ${(props) => props.cardModalToggle ? '0.8' : '1'};
   color: #fff;
   height: 100%;
   width: 100%;

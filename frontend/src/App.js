@@ -12,14 +12,20 @@ function App() {
   const dispatch = useDispatch();
   const isLightTheme = useSelector(selectIsLightTheme);
 
+  const [cardModalToggle, setCardModalToggle] = React.useState(false);
+
+  function handleCardModalToggle(){
+    setCardModalToggle(!cardModalToggle)
+  }
+
   return (
     <>
       <div style={{ display: "grid" }}>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
-          <Column />
-          <Column />
-          <Column />
-          <CardModal />
+          <Column handleCardModalToggle={handleCardModalToggle}/>
+          <Column handleCardModalToggle={handleCardModalToggle}/>
+          <Column handleCardModalToggle={handleCardModalToggle}/>
+          {cardModalToggle && <CardModal handleCardModalToggle={handleCardModalToggle} cardModalToggle={cardModalToggle} />}
           <Form />
         </ThemeProvider>
       </div>

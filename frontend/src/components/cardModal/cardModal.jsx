@@ -18,7 +18,7 @@ import {
     StyledOption, 
 } from "./CardModal.styled.js";
 
-const CardModal = () => {
+const CardModal = ({handleCardModalToggle, cardModalToggle}) => {
 
 // Gives us an array of task objects
 const tasks = useSelector(selectTasks);
@@ -26,7 +26,7 @@ const tasks = useSelector(selectTasks);
 const dispatch = useDispatch();
 // Set state based on a specific card/task
 const [currentTask, setCurrentTask] = React.useState(tasks[0]);
-// updates the task.status state when a dropdown option is selected
+// updates the task.status state when a dropdown option is selected and dispatches it
 const handleChange = (e) => {
     e.preventDefault();
     if(e.target.value === 'Doing'){
@@ -34,7 +34,6 @@ const handleChange = (e) => {
     } else if (e.target.value === 'Done'){
         dispatch(move_from_doing_to_done(setCurrentTask({...currentTask, status: e.target.value})))
     }
-    
 };
 
 // state for the checkboxes
@@ -48,13 +47,12 @@ function handleCheck(event){
         subTaskStatus.splice(checked.indexOf(event.target.value), 1);
       }
       setChecked(subTaskStatus);
-}
-    
+}    
 
     return (
         <>
-            <ModalWrapper>
-                <ModalContainer>
+            <ModalWrapper cardModalToggle={cardModalToggle} onClick={handleCardModalToggle}>
+                <ModalContainer onClick={e => e.stopPropagation()} >
                     <TitleKebabContainer>
                     <CardTitle>{currentTask.title}</CardTitle>
                     <KebabIcon/>
