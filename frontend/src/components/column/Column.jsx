@@ -1,11 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Card } from "../../components";
 import { StyledColumn } from "./Column.styled";
 
-const Column = () => {
+const Column = ({ handleCardModalToggle, tasks }) => {
   return (
     <StyledColumn>
-      <Card />
+      {tasks.map((task) => (
+        <Card
+          key={task.id}
+          handleCardModalToggle={handleCardModalToggle}
+          task={task}
+        />
+      ))}
     </StyledColumn>
   );
 };
