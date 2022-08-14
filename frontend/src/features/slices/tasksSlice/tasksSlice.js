@@ -46,5 +46,11 @@ export const {
 } = tasksSlice.actions;
 
 export const selectTasks = (state) => state.tasks.tasks;
+export const selectDoingTasks = (state) =>
+  state.tasks.tasks.filter((task) => task.status === "doing");
+export const selectDoneTasks = (state) =>
+  state.tasks.tasks.filter((task) => task.status === "done");
+export const selectTodoTasks = (state) =>
+  state.tasks.tasks.filter((task) => task.status === "todo");
 
 export default tasksSlice.reducer;
