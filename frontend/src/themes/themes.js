@@ -16,10 +16,10 @@ export const lightTheme = {
 
   //Modal Background color
   modalBG: "#FFF",
-  modalBackDrop: 'rgba(151, 151, 151)',
+  modalBackDrop: "rgba(0, 0, 0, 0.5)",
 
   //Modal subtask background
-  subTaskBG: '#E4EBFA',
+  subTaskBG: "#E4EBFA",
 };
 export const darkTheme = {
   main: "#22232E",
@@ -38,9 +38,9 @@ export const darkTheme = {
 
   //Modal Background color
   modalBG: "#2B2C37",
+  modalBackDrop: "rgba(0, 0, 0, 0.5)",
   // this color may need to be changed once we test out the dark mode
-  modalBackDrop: 'rgba(151, 151, 151, 0.8)',
 
   //Modal subtask background
-  subTaskBG: '#3E3F4E',
+  subTaskBG: "#3E3F4E",
 };
