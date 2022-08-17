@@ -3,10 +3,10 @@ import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg
 
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding : 20px 10px;
+  margin-left: 300px;
 `;
 
 export const NavTitle = styled.h4`
