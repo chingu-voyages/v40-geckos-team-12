@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { ListContainer, Brand } from "./Sidebar.styled";
-import { ListItem } from "../../components";
+import { ListItem, ToggleSwitch } from "../../components";
 import lightThemeLogo from "../../assets/logo-light.svg";
 import darkThemeLogo from "../../assets/logo-dark.svg";
 import { useSelector, useDispatch } from "react-redux";
@@ -12,8 +12,13 @@ import {
 } from "../../features/slices/themeSlice/themeSlice";
 
 const Sidenav = () => {
+  const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
   const isLightTheme = useSelector(selectIsLightTheme);
+
+  const handleToggle = () => {
+    dispatch(toggleTheme());
+  };
   return (
     <>
       <Brand style={{ marginBottom: "54px" }}>
@@ -28,8 +33,7 @@ const Sidenav = () => {
         <ListItem text="Platform Launch" svg={iconBoard} />
         <ListItem text="Marketing Plan" svg={iconBoard} />
         <ListItem text="Roadmap" svg={iconBoard} />
-
-        <button onClick={() => dispatch(toggleTheme())}>Toggle</button>
+        <ToggleSwitch handleToggle={handleToggle} />
       </ListContainer>
     </>
   );
