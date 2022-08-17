@@ -1,8 +1,10 @@
 import React from "react";
-import { NavContainer, NavTitle,NavButtonWrapper,NavButton,NavMenuIcon } from "./Navbar.Styled";
-//import {BiDotsVerticalRounded} from "re"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import { 
+  NavContainer, 
+  NavTitle,
+  NavButtonWrapper,
+  NavButton,
+  KebabIcon } from "./Navbar.Styled";
 
 const Navbar = () => {
   return (
@@ -10,7 +12,7 @@ const Navbar = () => {
         <NavTitle>Platform Launch</NavTitle>
         <NavButtonWrapper>
            <NavButton>+ Add New Task</NavButton>
-           <FontAwesomeIcon icon={('faEllipsisVertical')} />
+           <KebabIcon/>
         </NavButtonWrapper>
     </NavContainer>
   );

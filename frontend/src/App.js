@@ -1,7 +1,7 @@
-import Navbar from "./components/Navbar/Navbar";
+
 
 import React, { useState } from "react";
-import { Column, CardModal } from "./components";
+import { Column, CardModal, SidebarContainer, Navbar } from "./components";
 import { Form } from "./components";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -35,11 +35,9 @@ function App() {
     <>
       <div>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
+          <Navbar cardModalToggle={cardModalToggle} />
+          <SidebarContainer />
 
-          <div style={{display:"flex"}}>
-            <div>sidebar</div>
-            <Navbar cardModalToggle={cardModalToggle} />
-          </div>
           <Column
             tasks={todoTasks}
             handleCardModalToggle={handleCardModalToggle}
@@ -52,7 +50,6 @@ function App() {
             handleCardModalToggle={handleCardModalToggle}
             tasks={doneTasks}
           />
-
           {cardModalToggle && (
             <CardModal
               modalTask={modalTask}

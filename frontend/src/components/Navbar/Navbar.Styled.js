@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg";
 
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
@@ -36,4 +37,9 @@ export const NavButton = styled.button`
 
 export const NavMenuIcon = styled.span`
    color: black;
+`;
+
+export const KebabIcon = styled(Kebab)`
+  height: 50px;
+  width: 50px;
 `;
