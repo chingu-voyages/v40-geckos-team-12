@@ -7,4 +7,15 @@ import SidebarContainer from "./SidebarContainer/SidebarContainer";
 
 import CardModal from "./cardModal/CardModal";
 import CheckBox from "./checkbox/Checkbox";
-export { Card, Column, CardModal, Form, CheckBox, SidebarContainer, ListItem };
+
+import ToggleSwitch from "./toggler/ToggleSwitch";
+export {
+  Card,
+  Column,
+  CardModal,
+  Form,
+  CheckBox,
+  SidebarContainer,
+  ListItem,
+  ToggleSwitch,
+};
