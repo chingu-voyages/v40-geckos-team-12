@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { Column, CardModal, SidebarContainer, Navbar } from "./components";
 import { Form } from "./components";
@@ -30,7 +28,6 @@ function App() {
     setCardModalToggle(!cardModalToggle);
   }
 
-  console.log(cardModalToggle, "cardModal")
   return (
     <>
       <div>
