@@ -1,5 +1,6 @@
+import "./style.css";
 import React, { useState } from "react";
-import { Column, CardModal } from "./components";
+import { Column, CardModal, SidebarContainer } from "./components";
 import { Form } from "./components";
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -31,6 +32,7 @@ function App() {
     <>
       <div style={{ display: "flex" }}>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
+          <SidebarContainer />
           <Column
             tasks={todoTasks}
             handleCardModalToggle={handleCardModalToggle}
@@ -43,7 +45,6 @@ function App() {
             handleCardModalToggle={handleCardModalToggle}
             tasks={doneTasks}
           />
-
           {cardModalToggle && (
             <CardModal
               modalTask={modalTask}
