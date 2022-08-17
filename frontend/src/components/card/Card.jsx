@@ -1,12 +1,12 @@
 import React from "react";
 import { CardContainer, CardTitle, CardDescription } from "./Card.styled.js";
 
-const Card = () => {
+const Card = ({ handleCardModalToggle, task }) => {
   return (
     <>
-      <CardContainer>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+      <CardContainer onClick={() => handleCardModalToggle(task)}>
+        <CardTitle>{task.title}</CardTitle>
+        <CardDescription>{task.description}</CardDescription>
       </CardContainer>
     </>
   );

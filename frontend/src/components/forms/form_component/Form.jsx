@@ -21,6 +21,8 @@ const Form = () => {
     subtasks: [],
     status: "",
   });
+
+  console.log(newTaskData.status);
   const [subTask, setSubTask] = useState("");
   const dispatch = useDispatch();
   const handleSubTask = () => {
@@ -40,6 +42,7 @@ const Form = () => {
       status: "",
     });
   };
+
   return (
     <StyledFormContainer>
       <StyledFormHeader>Add New Task</StyledFormHeader>
@@ -85,14 +88,14 @@ const Form = () => {
         <LabelInputContainer>
           <StyledLabel text="Status">Status</StyledLabel>
           <StyledSelect
-            value={newTaskData.status}
             onChange={(e) => {
               setNewTaskData({ ...newTaskData, status: e.target.value });
             }}
           >
-            <StyledOption>Todo</StyledOption>
-            <StyledOption>Doing</StyledOption>
-            <StyledOption>Done</StyledOption>
+            <StyledOption value={""}>Select</StyledOption>
+            <StyledOption value={"todo"}>Todo</StyledOption>
+            <StyledOption value={"doing"}>Doing</StyledOption>
+            <StyledOption value={"done"}>Done</StyledOption>
           </StyledSelect>
         </LabelInputContainer>
         <StyledButton createTask={true}>Create Task </StyledButton>
