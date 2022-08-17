@@ -1,7 +1,11 @@
 import React from "react";
-import { NavContainer, ListContainer, List, Brand } from "./Sidebar.styled";
-import logo from "../../assets/logo-dark.svg";
+import { ListContainer, Brand } from "./Sidebar.styled";
+import { ListItem } from "../../components";
+import lightThemeLogo from "../../assets/logo-light.svg";
+import darkThemeLogo from "../../assets/logo-dark.svg";
 import { useSelector, useDispatch } from "react-redux";
+
+import iconBoard from "../../assets/icon-board.svg";
 import {
   toggleTheme,
   selectIsLightTheme,
@@ -12,13 +16,19 @@ const Sidenav = () => {
   const isLightTheme = useSelector(selectIsLightTheme);
   return (
     <>
-      <Brand>
-        <img src={logo} style={{ color: "black" }} alt="" />
+      <Brand style={{ marginBottom: "54px" }}>
+        <img
+          src={isLightTheme ? darkThemeLogo : lightThemeLogo}
+          style={{ color: "white" }}
+          alt=""
+        />
       </Brand>
+      <span>All boards</span>
       <ListContainer>
-        <List>Platform Launch</List>
-        <List>Marketing Plan</List>
-        <List>Roadmap</List>
+        <ListItem text="Platform Launch" svg={iconBoard} />
+        <ListItem text="Marketing Plan" svg={iconBoard} />
+        <ListItem text="Roadmap" svg={iconBoard} />
+
         <button onClick={() => dispatch(toggleTheme())}>Toggle</button>
       </ListContainer>
     </>
