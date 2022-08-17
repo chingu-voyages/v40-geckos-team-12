@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Column, CardModal, SidebarContainer, Navbar } from "./components";
 import { Form } from "./components";
+import { ColumnContainer } from "../src/components/column/columnContainer/ColumnContainer.styled"
 
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -35,18 +36,21 @@ function App() {
           <Navbar cardModalToggle={cardModalToggle} />
           <SidebarContainer />
 
-          <Column
-            tasks={todoTasks}
-            handleCardModalToggle={handleCardModalToggle}
-          />
-          <Column
-            tasks={doingTasks}
-            handleCardModalToggle={handleCardModalToggle}
-          />
-          <Column
-            handleCardModalToggle={handleCardModalToggle}
-            tasks={doneTasks}
-          />
+          <ColumnContainer>
+            <Column
+              tasks={todoTasks}
+              handleCardModalToggle={handleCardModalToggle}
+            />
+            <Column
+              tasks={doingTasks}
+              handleCardModalToggle={handleCardModalToggle}
+            />
+            <Column
+              handleCardModalToggle={handleCardModalToggle}
+              tasks={doneTasks}
+            />
+          </ColumnContainer>
+
           {cardModalToggle && (
             <CardModal
               modalTask={modalTask}

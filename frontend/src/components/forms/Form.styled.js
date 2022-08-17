@@ -22,7 +22,7 @@ export const StyledFormContainer = styled.div`
   position: relative;
   margin: 0 auto;
   top: 50%;
-  transform: translateY(-40%);
+  transform: translateY(-10%);
   border-radius: 5px;
   padding: 2rem;
 
