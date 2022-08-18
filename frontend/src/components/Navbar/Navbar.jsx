@@ -1,19 +1,22 @@
 import React from "react";
-import { 
-  NavContainer, 
+import {
+  NavContainer,
   NavTitle,
   NavButtonWrapper,
   NavButton,
-  KebabIcon } from "./Navbar.Styled";
+  KebabIcon,
+} from "./Navbar.Styled";
 
-const Navbar = () => {
+const Navbar = ({ setShowAddTaskModal }) => {
   return (
     <NavContainer>
-        <NavTitle>Platform Launch</NavTitle>
-        <NavButtonWrapper>
-           <NavButton>+ Add New Task</NavButton>
-           <KebabIcon/>
-        </NavButtonWrapper>
+      <NavTitle>Platform Launch</NavTitle>
+      <NavButtonWrapper>
+        <NavButton onClick={() => setShowAddTaskModal((previous) => !previous)}>
+          + Add New Task
+        </NavButton>
+        <KebabIcon />
+      </NavButtonWrapper>
     </NavContainer>
   );
 };
