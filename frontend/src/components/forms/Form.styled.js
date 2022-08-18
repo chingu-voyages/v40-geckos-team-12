@@ -46,6 +46,7 @@ export const LabelInputContainer = styled.div`
 `;
 
 export const StyledInput = styled.input`
+  color: ${(props) => props.theme.fontColor};
   border: 1px solid ${(props) => props.theme.labelLight};
   border-radius: 4px;
   padding: 10px;
@@ -53,7 +54,7 @@ export const StyledInput = styled.input`
   line-height: 16px;
   width: 100%;
   margin-top: 0.5rem;
-  color: ${(props) => props.theme.fontColor};
+
   cursor: pointer;
   &:focus {
     outline: none;
@@ -114,5 +115,5 @@ export const StyledSelect = styled.select`
   }
 `;
 export const StyledOption = styled.option`
-  color: ${(props) => props.theme.labelColor};
+  color: ${(props) => props.theme.fontColor};
 `;

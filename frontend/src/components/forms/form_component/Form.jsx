@@ -44,7 +44,7 @@ const Form = () => {
   };
 
   return (
-    <StyledFormContainer>
+    <StyledFormContainer onClick={(e) => e.stopPropagation()}>
       <StyledFormHeader>Add New Tasks</StyledFormHeader>
       <StyledForm onSubmit={handleSubmit}>
         <LabelInputContainer>

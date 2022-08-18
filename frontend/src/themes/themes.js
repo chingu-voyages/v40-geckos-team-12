@@ -1,5 +1,7 @@
 export const lightTheme = {
-  main: "#F4F7FD",
+  main: "#FFF",
+  mainContainer: "#F4F7FD",
+
   fontColor: "#000112",
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
@@ -22,8 +24,9 @@ export const lightTheme = {
   subTaskBG: "#E4EBFA",
 };
 export const darkTheme = {
-  main: "#22232E",
-  fontColor: "#FFF",
+  main: "#2B2C37",
+  mainContainer: "#22232E",
+  fontColor: "#000",
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
   labelColor: "#fff",

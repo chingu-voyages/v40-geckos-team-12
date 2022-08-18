@@ -9,6 +9,7 @@ export const NavContainer = styled.nav`
 `;
 
 export const NavTitle = styled.h4`
+  color: ${(props) => props.theme.fontColor};
   font-weight: 700;
   font-size: 24px;
 `;
