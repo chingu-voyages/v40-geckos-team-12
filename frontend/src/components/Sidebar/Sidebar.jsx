@@ -33,8 +33,8 @@ const Sidenav = () => {
         <ListItem text="Platform Launch" svg={iconBoard} />
         <ListItem text="Marketing Plan" svg={iconBoard} />
         <ListItem text="Roadmap" svg={iconBoard} />
-        <ToggleSwitch handleToggle={handleToggle} />
       </ListContainer>
+      <ToggleSwitch handleToggle={handleToggle} />
     </>
   );
 };
