@@ -5,7 +5,7 @@ import {
   selectTasks,
   move_from_todo_to_doing,
   move_from_doing_to_done,
-} from "features/slices/tasksSlice/tasksSlice";
+} from "../../features/slices/tasksSlice/tasksSlice";
 
 import {
   ModalWrapper,
@@ -86,7 +86,10 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
           </SubTaskContainer>
           <StatusContainer>
             <StyledLabel text="Status">Current Status</StyledLabel>
-            <StyledSelect value={currentTask.status} onChange={handleChange}>
+            <StyledSelect
+              value={currentTask.status}
+              onChange={(e) => handleChange(e)}
+            >
               <StyledOption>Todo</StyledOption>
               <StyledOption>Doing</StyledOption>
               <StyledOption>Done</StyledOption>

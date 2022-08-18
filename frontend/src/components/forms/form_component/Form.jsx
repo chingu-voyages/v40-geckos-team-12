@@ -14,7 +14,7 @@ import {
   StyledFormHeader,
   StyledForm,
 } from "../Form.styled";
-const Form = () => {
+const Form = ({ handleCreateTaskModalToggle }) => {
   const [newTaskData, setNewTaskData] = useState({
     title: "",
     description: "",
@@ -22,7 +22,6 @@ const Form = () => {
     status: "",
   });
 
-  console.log(newTaskData.status);
   const [subTask, setSubTask] = useState("");
   const dispatch = useDispatch();
   const handleSubTask = () => {
@@ -41,6 +40,7 @@ const Form = () => {
       subtasks: [],
       status: "",
     });
+    handleCreateTaskModalToggle();
   };
 
   return (

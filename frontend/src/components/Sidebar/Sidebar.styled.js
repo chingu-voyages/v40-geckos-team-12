@@ -11,7 +11,7 @@ export const ListContainer = styled.ul`
 export const Brand = styled.div``;
 
 export const List = styled.li`
-  color: ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.secondFontColor};
   padding: 10px;
   margin: 12px 0;
   font-size: 15px;

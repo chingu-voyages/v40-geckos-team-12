@@ -52,14 +52,20 @@ function App() {
             />
             <div style={{ display: "flex" }}>
               <Column
+                title="TODO"
+                orbColor="#49C4E5"
                 tasks={todoTasks}
                 handleCardModalToggle={handleCardModalToggle}
               />
               <Column
+                title="DOING"
+                orbColor="#8471F2"
                 tasks={doingTasks}
                 handleCardModalToggle={handleCardModalToggle}
               />
               <Column
+                title="DONE"
+                orbColor="#67E2AE"
                 handleCardModalToggle={handleCardModalToggle}
                 tasks={doneTasks}
               />
