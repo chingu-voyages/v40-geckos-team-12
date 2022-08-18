@@ -5,7 +5,7 @@ import { ModalWrapper, ModalContainer } from "../../cardModal/CardModal.styled";
 const AddTaskModal = ({ handleCreateTaskModalToggle }) => {
   return (
     <ModalWrapper onClick={handleCreateTaskModalToggle}>
-      <Form />
+      <Form handleCreateTaskModalToggle={handleCreateTaskModalToggle} />
     </ModalWrapper>
   );
 };

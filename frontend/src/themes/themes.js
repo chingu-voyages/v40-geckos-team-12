@@ -26,7 +26,7 @@ export const lightTheme = {
 export const darkTheme = {
   main: "#2B2C37",
   mainContainer: "#22232E",
-  fontColor: "#000",
+  fontColor: "#fff",
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
   labelColor: "#fff",
