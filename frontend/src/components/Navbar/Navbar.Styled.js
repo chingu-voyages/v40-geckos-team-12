@@ -38,7 +38,4 @@ export const NavMenuIcon = styled.span`
   color: black;
 `;
 
-export const KebabIcon = styled(Kebab)`
-  height: 50px;
-  width: 50px;
-`;
+export const KebabIcon = styled(Kebab)``;
