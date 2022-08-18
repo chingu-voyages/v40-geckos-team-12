@@ -17,13 +17,12 @@ export const StyledLabel = styled.label`
 
 export const StyledFormContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  width: 480px;
+  max-width: 450px;
   position: relative;
   margin: 0 auto;
   top: 50%;
-  transform: translateY(-10%);
-  border-radius: 5px;
+  transform: translateY(-50%);
+  border-radius: 6px;
   padding: 2rem;
 
   @media (max-width: 768px) {
