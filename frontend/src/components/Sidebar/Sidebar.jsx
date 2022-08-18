@@ -28,13 +28,13 @@ const Sidenav = () => {
           alt=""
         />
       </Brand>
-      <span>All boards</span>
+      <span style={{ color: isLightTheme ? "#000" : "#fff" }}>All boards</span>
       <ListContainer>
         <ListItem text="Platform Launch" svg={iconBoard} />
         <ListItem text="Marketing Plan" svg={iconBoard} />
         <ListItem text="Roadmap" svg={iconBoard} />
-        <ToggleSwitch handleToggle={handleToggle} />
       </ListContainer>
+      <ToggleSwitch handleToggle={handleToggle} />
     </>
   );
 };

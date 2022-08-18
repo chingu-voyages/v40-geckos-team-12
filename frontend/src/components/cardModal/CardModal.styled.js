@@ -25,10 +25,7 @@ export const ModalContainer = styled.div`
   padding: 2em;
 `;
 
-export const KebabIcon = styled(Kebab)`
-  height: 50px;
-  width: 50px;
-`;
+export const KebabIcon = styled(Kebab)``;
 
 export const TitleKebabContainer = styled.div`
   display: flex;

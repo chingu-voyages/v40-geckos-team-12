@@ -17,11 +17,12 @@ export const StyledLabel = styled.label`
 
 export const StyledFormContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  width: 480px;
-  left: 480px;
-  top: 175px;
-  border-radius: 5px;
+  max-width: 450px;
+  position: relative;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 6px;
   padding: 2rem;
 
   @media (max-width: 768px) {
@@ -45,6 +46,7 @@ export const LabelInputContainer = styled.div`
 `;
 
 export const StyledInput = styled.input`
+  color: ${(props) => props.theme.fontColor};
   border: 1px solid ${(props) => props.theme.labelLight};
   border-radius: 4px;
   padding: 10px;
@@ -52,7 +54,7 @@ export const StyledInput = styled.input`
   line-height: 16px;
   width: 100%;
   margin-top: 0.5rem;
-  color: ${(props) => props.theme.fontColor};
+
   cursor: pointer;
   &:focus {
     outline: none;
@@ -113,5 +115,5 @@ export const StyledSelect = styled.select`
   }
 `;
 export const StyledOption = styled.option`
-  color: ${(props) => props.theme.labelColor};
+  color: ${(props) => props.theme.fontColor};
 `;

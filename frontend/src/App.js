@@ -1,7 +1,13 @@
-import "./style.css";
 import React, { useState } from "react";
-import { Column, CardModal, SidebarContainer } from "./components";
-import { Form } from "./components";
+import {
+  Column,
+  CardModal,
+  SidebarContainer,
+  Navbar,
+  AddTaskModal,
+} from "./components";
+import { ColumnContainer } from "../src/components/column/columnContainer/ColumnContainer.styled";
+
 import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/themes";
@@ -19,6 +25,8 @@ function App() {
   const [cardModalToggle, setCardModalToggle] = useState(false);
   const [modalTask, setModaltask] = useState({});
 
+  const [showAddTaskModal, setShowAddTaskModal] = useState(false);
+
   const todoTasks = useSelector(selectTodoTasks);
   const doingTasks = useSelector(selectDoingTasks);
   const doneTasks = useSelector(selectDoneTasks);
@@ -27,24 +35,37 @@ function App() {
     setModaltask(task);
     setCardModalToggle(!cardModalToggle);
   }
+  function handleCreateTaskModalToggle() {
+    setShowAddTaskModal(!showAddTaskModal);
+  }
 
   return (
     <>
       <div style={{ display: "flex" }}>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <SidebarContainer />
-          <Column
-            tasks={todoTasks}
-            handleCardModalToggle={handleCardModalToggle}
-          />
-          <Column
-            tasks={doingTasks}
-            handleCardModalToggle={handleCardModalToggle}
-          />
-          <Column
-            handleCardModalToggle={handleCardModalToggle}
-            tasks={doneTasks}
-          />
+
+          <ColumnContainer>
+            <Navbar
+              cardModalToggle={cardModalToggle}
+              setShowAddTaskModal={setShowAddTaskModal}
+            />
+            <div style={{ display: "flex" }}>
+              <Column
+                tasks={todoTasks}
+                handleCardModalToggle={handleCardModalToggle}
+              />
+              <Column
+                tasks={doingTasks}
+                handleCardModalToggle={handleCardModalToggle}
+              />
+              <Column
+                handleCardModalToggle={handleCardModalToggle}
+                tasks={doneTasks}
+              />
+            </div>
+          </ColumnContainer>
+
           {cardModalToggle && (
             <CardModal
               modalTask={modalTask}
@@ -52,7 +73,11 @@ function App() {
               cardModalToggle={cardModalToggle}
             />
           )}
-          <Form />
+          {showAddTaskModal && (
+            <AddTaskModal
+              handleCreateTaskModalToggle={handleCreateTaskModalToggle}
+            />
+          )}
         </ThemeProvider>
       </div>
     </>
