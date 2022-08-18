@@ -9,9 +9,13 @@ import ListItem from "./Sidebar/sideBarListItem/ListItem";
 import SidebarContainer from "./SidebarContainer/SidebarContainer";
 
 import CardModal from "./cardModal/CardModal";
+
 import CheckBox from "./checkbox/Checkbox";
 
 import ToggleSwitch from "./toggler/ToggleSwitch";
+
+import AddTaskModal from "./forms/add_task_modal/AddTaskModal";
+
 export {
   Card,
   Column,
@@ -21,6 +25,6 @@ export {
   SidebarContainer,
   ListItem,
   ToggleSwitch,
-  Navbar
+  Navbar,
+  AddTaskModal,
 };
-
