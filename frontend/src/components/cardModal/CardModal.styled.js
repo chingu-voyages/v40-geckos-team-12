@@ -14,6 +14,22 @@ export const ModalWrapper = styled.div`
   top: 0;
 `;
 
+export const EditOrDeleteWrapper = styled.div`
+  background-color: ${(props) => props.theme.mainContainer};
+  position: absolute;
+  top: 93px;
+  right: -80px;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 6px;
+`;
+export const EditOrDeleteLabel = styled.label`
+  color: ${(props) => (props.warning ? "#EA5555" : props.theme.fontColor)};
+  display: block;
+  padding: 0.5rem 0;
+  cursor: pointer;
+`;
+
 export const ModalContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
   max-width: 450px;
@@ -23,9 +39,12 @@ export const ModalContainer = styled.div`
   top: 50%;
   transform: translateY(-50%);
   padding: 2em;
+  position: relative;
 `;
 
-export const KebabIcon = styled(Kebab)``;
+export const KebabIcon = styled(Kebab)`
+  cursor: pointer;
+`;
 
 export const TitleKebabContainer = styled.div`
   display: flex;
