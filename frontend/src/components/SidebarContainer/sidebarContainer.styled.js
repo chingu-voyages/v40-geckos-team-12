@@ -7,4 +7,5 @@ export const Container = styled.div`
   width: 300px;
   flex: 1 0 300px;
   position: relative;
+  border-right: 2px solid ${(props) => props.theme.subTaskBG};
 `;

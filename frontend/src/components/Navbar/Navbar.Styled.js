@@ -6,6 +6,7 @@ export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
+  border-bottom: 2px solid ${(props) => props.theme.subTaskBG};
 `;
 
 export const NavTitle = styled.h4`
