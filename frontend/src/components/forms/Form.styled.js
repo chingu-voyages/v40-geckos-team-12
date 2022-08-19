@@ -65,6 +65,7 @@ export const StyledInput = styled.input`
 
 export const StyledTextArea = styled.textarea`
   color: ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.labelLight};
   cursor: pointer;
   background-color: ${(props) => props.theme.modalBG};
   border-radius: 4px;
@@ -112,7 +113,10 @@ export const StyledSelect = styled.select`
   width: 100%;
   padding: 8px 16px;
   margin-top: 0.5rem;
+  border-radius: 4px;
   background-color: ${(props) => props.theme.modalBG};
+  border: 1px solid ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
   &:focus {
     outline: none;
     border: 1px solid ${(props) => props.theme.fontColorHover};
