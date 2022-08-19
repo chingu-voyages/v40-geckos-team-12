@@ -10,7 +10,6 @@ const tasksSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, { payload }) => {
-      console.log("tion", payload);
       state.tasks.push({ id: uuidv4(), ...payload });
     },
     removeTask: (state, action) => {
@@ -18,19 +17,19 @@ const tasksSlice = createSlice({
     },
 
     move_from_todo_to_doing: (state, action) => {
+      console.log(action.payload);
       state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload) {
-          task.todo = false;
-          task.doing = true;
+          task.status = "doing";
         }
         return task;
       });
     },
     move_from_doing_to_done: (state, action) => {
+      console.log(action.payload);
       state.tasks = state.tasks.map((task) => {
         if (task.id === action.payload) {
-          task.doing = false;
-          task.done = true;
+          task.status = "done";
         }
         return task;
       });

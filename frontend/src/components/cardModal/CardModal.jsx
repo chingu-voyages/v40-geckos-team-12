@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { CheckBox } from "../../components";
 import {
   selectTasks,
   move_from_todo_to_doing,
   move_from_doing_to_done,
+  removeTask,
 } from "../../features/slices/tasksSlice/tasksSlice";
 
 import {
@@ -20,6 +21,8 @@ import {
   StyledLabel,
   StyledSelect,
   StyledOption,
+  EditOrDeleteWrapper,
+  EditOrDeleteLabel,
 } from "./CardModal.styled.js";
 
 const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
@@ -29,14 +32,14 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
   const dispatch = useDispatch();
   // Set state based on a specific card/task
 
-  const [currentTask, setCurrentTask] = React.useState(modalTask);
+  const [currentTask, setCurrentTask] = useState(modalTask);
+  const [openEditModal, setOpenEditModal] = useState(false);
 
   // updates the task.status state when a dropdown option is selected and dispatches it
   const handleChange = (e) => {
     e.preventDefault();
     if (e.target.value === "Doing") {
       setCurrentTask({ ...currentTask, status: e.target.value });
-
       dispatch(move_from_todo_to_doing(currentTask.id));
     } else if (e.target.value === "Done") {
       setCurrentTask({ ...currentTask, status: e.target.value });
@@ -58,6 +61,16 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
     setChecked(subTaskStatus);
   }
 
+  const handleDelete = (id) => {
+    dispatch(removeTask(id));
+    setOpenEditModal(false);
+    handleCardModalToggle();
+  };
+
+  const handleEdit = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <>
       <ModalWrapper
@@ -65,10 +78,24 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
         onClick={handleCardModalToggle}
       >
         <ModalContainer onClick={(e) => e.stopPropagation()}>
-          <TitleKebabContainer>
+          <TitleKebabContainer
+            onClick={() => setOpenEditModal((previous) => !previous)}
+          >
             <CardTitle>{currentTask.title}</CardTitle>
             <KebabIcon />
           </TitleKebabContainer>
+          {openEditModal && (
+            <EditOrDeleteWrapper>
+              <EditOrDeleteLabel onClick={handleEdit}>Edit</EditOrDeleteLabel>
+              <EditOrDeleteLabel
+                onClick={() => handleDelete(currentTask.id)}
+                warning
+              >
+                Delete
+              </EditOrDeleteLabel>
+            </EditOrDeleteWrapper>
+          )}
+
           <CardDescription>{currentTask.description}</CardDescription>
           <SubTaskTitle>
             Subtasks ({currentTask.subtasks.length} of
