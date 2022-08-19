@@ -13,6 +13,7 @@ export const NavTitle = styled.h4`
   color: ${(props) => props.theme.fontColor};
   font-weight: 700;
   font-size: 24px;
+  padding-left: .5em;
 `;
 
 export const NavButtonWrapper = styled.div`
