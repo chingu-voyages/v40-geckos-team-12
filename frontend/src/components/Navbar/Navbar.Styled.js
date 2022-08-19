@@ -33,6 +33,11 @@ export const NavButton = styled.button`
   cursor: pointer;
   width: 100%;
   border: none;
+
+  &:hover {
+    background-color: ${(props) => props.theme.labelColor};
+    transition: background-color 0.4s ease;
+  }
 `;
 
 export const NavMenuIcon = styled.span`
