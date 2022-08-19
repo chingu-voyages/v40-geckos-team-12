@@ -6,12 +6,14 @@ export const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 20px 10px;
+  border-bottom: 2px solid ${(props) => props.theme.subTaskBG};
 `;
 
 export const NavTitle = styled.h4`
   color: ${(props) => props.theme.fontColor};
   font-weight: 700;
   font-size: 24px;
+  padding-left: .5em;
 `;
 
 export const NavButtonWrapper = styled.div`
@@ -33,6 +35,11 @@ export const NavButton = styled.button`
   cursor: pointer;
   width: 100%;
   border: none;
+
+  &:hover {
+    background-color: ${(props) => props.theme.labelColor};
+    transition: background-color 0.4s ease;
+  }
 `;
 
 export const NavMenuIcon = styled.span`

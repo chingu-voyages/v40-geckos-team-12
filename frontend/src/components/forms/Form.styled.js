@@ -48,6 +48,7 @@ export const LabelInputContainer = styled.div`
 export const StyledInput = styled.input`
   color: ${(props) => props.theme.fontColor};
   border: 1px solid ${(props) => props.theme.labelLight};
+  background-color: ${(props) => props.theme.modalBG};
   border-radius: 4px;
   padding: 10px;
   font-size: 13px;
@@ -64,7 +65,9 @@ export const StyledInput = styled.input`
 
 export const StyledTextArea = styled.textarea`
   color: ${(props) => props.theme.fontColor};
+  border: 1px solid ${(props) => props.theme.labelLight};
   cursor: pointer;
+  background-color: ${(props) => props.theme.modalBG};
   border-radius: 4px;
   width: 100%;
   padding: 10px;
@@ -98,6 +101,7 @@ export const StyledButton = styled.button`
   width: 100%;
   margin-top: 0.5rem;
   cursor: pointer;
+  font-weight: 700;
   transition: all 0.7s ease-in-out;
   &:hover {
     outline: none;
@@ -109,6 +113,10 @@ export const StyledSelect = styled.select`
   width: 100%;
   padding: 8px 16px;
   margin-top: 0.5rem;
+  border-radius: 4px;
+  background-color: ${(props) => props.theme.modalBG};
+  border: 1px solid ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
   &:focus {
     outline: none;
     border: 1px solid ${(props) => props.theme.fontColorHover};
