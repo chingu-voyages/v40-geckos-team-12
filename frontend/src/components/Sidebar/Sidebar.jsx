@@ -22,6 +22,7 @@ const Sidenav = () => {
 
   const handleClick = (index) => {
     setPosition(index);
+    console.log('clicked');
   }
 
   const handleToggle = () => {
@@ -41,15 +42,7 @@ const Sidenav = () => {
       <span style={{ color: isLightTheme ? "#000" : "#fff" }}>All boards</span>
 
       <ListContainer>
-        {texts.map(
-
-          (item, index) => <ListItem 
-          onClick={() => handleClick(index)}
-          key={index}
-          text={item} svg={iconBoard}
-          className={index === position ? 'active' : null}
-
-           />)}
+        {texts.map((item, index) => <div key={index} onClick={() => handleClick(index)} className={index === position ? 'active' : null}><ListItem text={item} svg={iconBoard} /></div>)}
       </ListContainer>
       
       <ToggleSwitch handleToggle={handleToggle} />

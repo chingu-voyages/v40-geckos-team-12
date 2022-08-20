@@ -18,13 +18,6 @@ export const List = styled.li`
   font-size: 15px;
   cursor: pointer;
 
-  &.active{
-    background-color: ${(props) => props.theme.createSubTaskText};
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    color: #fff;
-  }
-
   &:hover {
     background-color: ${(props) => props.theme.createSubTaskText};
     border-top-right-radius: 25px;
