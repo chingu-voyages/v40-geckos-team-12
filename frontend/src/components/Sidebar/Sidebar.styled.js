@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {css} from 'styled-components'
 
 export const NavContainer = styled.nav`
   // color: rgb(62,63,78);
@@ -17,10 +18,20 @@ export const List = styled.li`
   font-size: 15px;
   cursor: pointer;
 
+  &.active{
+    background-color: ${(props) => props.theme.createSubTaskText};
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #fff;
+  }
+
   &:hover {
     background-color: ${(props) => props.theme.createSubTaskText};
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     color: #fff;
   }
+
+ 
 `;
+

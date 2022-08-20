@@ -12,3 +12,22 @@ body {
   font-family: "Plus Jakarta Sans", sans-serif;
   
 }
+
+.change:hover{
+  background-color: #fff;
+  mask: url('../assets/icon-board.svg') no-repeat center;
+  border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #fff;
+}
+
+.active{
+  background-color: purple;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: #fff;
+}
+
+
+
+
