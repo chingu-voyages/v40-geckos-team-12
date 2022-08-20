@@ -24,3 +24,12 @@ export const List = styled.li`
     color: #fff;
   }
 `;
+
+export const HideSidebar = styled.div`
+  position: absolute;
+  bottom: 7%;
+  left: 15%;
+  display: flex;
+
+ 
+`

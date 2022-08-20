@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ListContainer, Brand } from "./Sidebar.styled";
+import { ListContainer, Brand ,HideSidebar} from "./Sidebar.styled";
 import { ListItem, ToggleSwitch } from "../../components";
 import lightThemeLogo from "../../assets/logo-light.svg";
 import darkThemeLogo from "../../assets/logo-dark.svg";
@@ -10,6 +10,7 @@ import {
   toggleTheme,
   selectIsLightTheme,
 } from "../../features/slices/themeSlice/themeSlice";
+import hideSidebar from "../../assets/icon-hide-sidebar.svg"
 
 const Sidenav = () => {
   const [checked, setChecked] = useState(false);
@@ -19,6 +20,8 @@ const Sidenav = () => {
   const handleToggle = () => {
     dispatch(toggleTheme());
   };
+
+
   return (
     <>
       <Brand style={{ marginBottom: "54px" }}>
@@ -35,6 +38,10 @@ const Sidenav = () => {
         <ListItem text="Roadmap" svg={iconBoard} />
       </ListContainer>
       <ToggleSwitch handleToggle={handleToggle} />
+      <HideSidebar>
+        <img src={hideSidebar} alt="sidebar"/>
+        <h4 style={{ color: "#828FA3", fontSize: "15px", margin:"0 7px"}}>Hide Sidebar</h4>
+      </HideSidebar>
     </>
   );
 };
