@@ -7,7 +7,17 @@ export const CardContainer = styled.div`
   width: 280px;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1015);
+  box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.15);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 5px 5px 10px 5px rgba(54, 78, 126, 0.1015);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  &:hover #cardtitle {
+    color: ${(props) => props.theme.fontColorHover};
+  }
 `;
 
 export const CardTitle = styled.h3`
