@@ -5,7 +5,7 @@ const Card = ({ handleCardModalToggle, task }) => {
   return (
     <>
       <CardContainer onClick={() => handleCardModalToggle(task)}>
-        <CardTitle>{task.title}</CardTitle>
+        <CardTitle id="cardtitle">{task.title}</CardTitle>
         <CardDescription>{task.description}</CardDescription>
       </CardContainer>
     </>

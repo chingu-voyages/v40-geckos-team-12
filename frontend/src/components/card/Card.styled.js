@@ -8,6 +8,11 @@ export const CardContainer = styled.div`
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.1015);
+  cursor: pointer;
+
+  &:hover #cardtitle {
+    color: ${(props) => props.theme.fontColorHover};
+  }
 `;
 
 export const CardTitle = styled.h3`
