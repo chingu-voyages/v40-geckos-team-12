@@ -13,14 +13,6 @@ body {
   
 }
 
-.change:hover{
-  background-color: #fff;
-  mask: url('../assets/icon-board.svg') no-repeat center;
-  border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    color: #fff;
-}
-
 .active{
     background-color: #635FC7;
     border-top-right-radius: 25px;
