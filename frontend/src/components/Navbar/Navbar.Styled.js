@@ -47,3 +47,5 @@ export const NavMenuIcon = styled.span`
 `;
 
 export const KebabIcon = styled(Kebab)``;
+
+export const Brand = styled.div``;
