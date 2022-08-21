@@ -23,4 +23,8 @@ export const List = styled.li`
     border-bottom-right-radius: 25px;
     color: #fff;
   }
+
+  &.active {
+    color: ${(props) => props.theme.orange};
+  }
 `;
