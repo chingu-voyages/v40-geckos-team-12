@@ -4,7 +4,7 @@ import { List } from "../Sidebar.styled";
 const ListItem = ({ text, svg }) => {
   return (
     <>
-      <List>
+      <List activeClassName="active">
         <img style={{ paddingRight: 16 }} src={svg} alt="list-icon" />
         <span>{text}</span>
       </List>
