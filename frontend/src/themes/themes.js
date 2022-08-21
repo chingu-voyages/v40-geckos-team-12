@@ -7,6 +7,7 @@ export const lightTheme = {
   fontColorHover: "#635FC7",
   labelColor: "#828FA3",
   labelHover: "#A8A4FF",
+  boardHover: "rgba(168, 164, 255, 0.5)",
 
   //createSubTask colors
   createSubtaskBtnBG: "#F0EFFA",
@@ -30,6 +31,7 @@ export const darkTheme = {
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
   labelColor: "A8A4FF",
+  boardHover: "#FFF",
 
   //createSubTask colors
   createSubtaskBtnBG: "#FFF",

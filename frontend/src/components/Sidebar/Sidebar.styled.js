@@ -1,30 +1,44 @@
 import styled from "styled-components";
 
-export const NavContainer = styled.nav`
-  // color: rgb(62,63,78);
+export const Container = styled.div`
 `;
 
 export const ListContainer = styled.ul`
   list-style-type: none;
+  margin-top: .8em;
+  margin-right: 1em;
+  padding: 0;
 `;
 
-export const Brand = styled.div``;
+export const Brand = styled.div`
+  margin-bottom: 3em;
+  margin-top: 1.5em;
+  padding-left: 1.5em;
+`;
 
 export const List = styled.li`
   color: ${(props) => props.theme.secondFontColor};
-  padding: 10px;
-  margin: 12px 0;
   font-size: 15px;
   cursor: pointer;
+  padding: 15px 0px 15px 0px;
+  padding-left: 1.5em;
 
   &:hover {
-    background-color: ${(props) => props.theme.createSubTaskText};
+    background-color: ${(props) => props.theme.boardHover};
+    color: #635FC7;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    color: #fff;
   }
 
   &.active {
     color: ${(props) => props.theme.orange};
   }
 `;
+
+export const SpanBoard = styled.span`
+  font-size: 12px; 
+  letter-spacing: 2px; 
+  padding: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+`
