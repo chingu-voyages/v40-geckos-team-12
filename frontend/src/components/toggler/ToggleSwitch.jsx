@@ -11,7 +11,6 @@ const ToggleSwitch = ({ handleToggle }) => {
     <>
       <ToggleContainer>
         <img src={LightThemeSwitchIcon} alt="icon light" />
-
         <label style={{ margin: "0 14px" }} className="switch">
           <input onChange={handleToggle} type="checkbox" />
           <span className="slider round"></span>

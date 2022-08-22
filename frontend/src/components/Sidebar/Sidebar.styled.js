@@ -30,6 +30,6 @@ export const HideSidebar = styled.div`
   bottom: 7%;
   left: 15%;
   display: flex;
-
+  cursor: pointer
  
 `

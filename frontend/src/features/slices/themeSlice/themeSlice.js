@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   isLightTheme: true,
+  isSidebarOpen: true,
 };
 
 const themeSlice = createSlice({
@@ -11,11 +12,15 @@ const themeSlice = createSlice({
     toggleTheme: (state) => {
       state.isLightTheme = !state.isLightTheme;
     },
+    toggleisSidebarOpen: (state,{payload})=>{
+     return {...state, isSidebarOpen: payload}
+    }
   },
 });
 
-export const { toggleTheme } = themeSlice.actions;
+export const { toggleTheme,toggleisSidebarOpen } = themeSlice.actions;
 
 export const selectIsLightTheme = (state) => state.theme.isLightTheme;
+export const selectIsSidebarOpen = (state) => state.theme.isSidebarOpen;
 
 export default themeSlice.reducer;

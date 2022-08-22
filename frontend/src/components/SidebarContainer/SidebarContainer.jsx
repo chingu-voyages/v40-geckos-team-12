@@ -4,7 +4,7 @@ import { Container } from "./sidebarContainer.styled.js";
 
 const SidebarContainer = () => {
   return (
-    <Container>
+    <Container id="sidebar">
       <Sidenav/>
     </Container>
   );

@@ -4,8 +4,8 @@ export const Container = styled.div`
   background-color: ${(props) => props.theme.main};
   padding: 20px 15px;
   min-height: 100vh;
-  width: 300px;
-  flex: 1 0 300px;
+   width:300px;
   position: relative;
+  transition: all 2s linear;
   border-right: 2px solid ${(props) => props.theme.subTaskBG};
 `;
