@@ -2,12 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Card } from "../../components";
 import { StyledColumn } from "./Column.styled";
-import { ColumnContainer } from "./columnContainer/ColumnContainer.styled";
 
 const Column = ({ title, handleCardModalToggle, tasks, orbColor }) => {
   return (
     <StyledColumn>
-      <div style={{ letterSpacing: "1", color: "#828fa3", display: "flex" }}>
+      <div style={{ letterSpacing: "1", color: "#828fa3", display: "flex", width: '280px' }}>
         <span
           style={{
             borderRadius: "50%",

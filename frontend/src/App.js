@@ -7,7 +7,8 @@ import {
   AddTaskModal,
   EditTaskModal,
 } from "./components";
-import { ColumnContainer } from "../src/components/column/columnContainer/ColumnContainer.styled";
+import { MainContainer } from "./components/container/MainContainer.styled";
+import { ColumnContainer } from "components/container/ColumnContainer.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -19,7 +20,6 @@ import {
   selectDoingTasks,
   selectDoneTasks,
 } from "./features/slices/tasksSlice/tasksSlice";
-import { toggleTheme } from "./features/slices/themeSlice/themeSlice";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
@@ -50,12 +50,12 @@ function App() {
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <SidebarContainer />
 
-          <ColumnContainer>
+          <MainContainer>
             <Navbar
               cardModalToggle={cardModalToggle}
               setShowAddTaskModal={setShowAddTaskModal}
             />
-            <div style={{ display: "flex" }}>
+            <ColumnContainer>
               <Column
                 title="TODO"
                 orbColor="#49C4E5"
@@ -74,8 +74,8 @@ function App() {
                 handleCardModalToggle={handleCardModalToggle}
                 tasks={doneTasks}
               />
-            </div>
-          </ColumnContainer>
+            </ColumnContainer>
+          </MainContainer>
 
           {cardModalToggle && (
             <CardModal
