@@ -45,7 +45,7 @@ export const NavButton = styled.button`
   border: none;
 
   &:hover {
-    background-color: ${(props) => props.theme.labelColor};
+    background-color: #A8A4FF;
     transition: background-color 0.4s ease;
   }
 `;
