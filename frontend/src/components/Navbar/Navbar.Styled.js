@@ -8,18 +8,25 @@ export const NavContainer = styled.nav`
   justify-content: space-between;
   padding: 20px 10px;
   border-bottom: 2px solid ${(props) => props.theme.subTaskBG};
+
+  @media (max-width: 770px){
+    padding: 10px 15px;
+  }
+
 `;
 
 export const NavTitle = styled.h4`
   color: ${(props) => props.theme.fontColor};
   font-weight: 700;
   font-size: 24px;
-  padding-left: .5em;
+
+  @media (max-width: 770px){
+    font-size: 20px;
+  }
 `;
 
 export const NavButtonWrapper = styled.div`
   display: flex;
-  padding-right: 32px;
   align-items: center;
 `;
 
