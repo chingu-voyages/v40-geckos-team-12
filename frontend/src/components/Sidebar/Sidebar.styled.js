@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {css} from 'styled-components'
 
 export const NavContainer = styled.nav`
   // color: rgb(62,63,78);
