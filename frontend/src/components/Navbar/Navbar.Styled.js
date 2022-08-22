@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg";
+import { ReactComponent as Plus } from "../../assets/icon-add-task-mobile.svg"
 
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
@@ -55,3 +56,19 @@ export const NavMenuIcon = styled.span`
 `;
 
 export const KebabIcon = styled(Kebab)``;
+
+export const PlusIcon = styled(Plus)`
+  @media (min-width: 635px){
+    display: none;
+}
+
+`;
+
+export const TaskSpan = styled.span`
+  display: inline-block;
+  vertical-align: middle;
+
+  @media (max-width: 630px){
+    display: none;
+  }
+`;

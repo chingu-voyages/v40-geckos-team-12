@@ -5,6 +5,8 @@ import {
   NavButtonWrapper,
   NavButton,
   KebabIcon,
+  PlusIcon,
+  TaskSpan,
 } from "./Navbar.Styled";
 
 const Navbar = ({ setShowAddTaskModal }) => {
@@ -13,7 +15,7 @@ const Navbar = ({ setShowAddTaskModal }) => {
       <NavTitle>Platform Launch</NavTitle>
       <NavButtonWrapper>
         <NavButton onClick={() => setShowAddTaskModal((previous) => !previous)}>
-          + Add New Task
+          <PlusIcon/><TaskSpan>+ Add New Task</TaskSpan>
         </NavButton>
         <KebabIcon />
       </NavButtonWrapper>
