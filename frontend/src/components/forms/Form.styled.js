@@ -26,14 +26,10 @@ export const StyledFormContainer = styled.div`
   padding: 2rem;
 
   @media (max-width: 768px) {
-    width: 480px;
-    left: 144px;
-    top: 272px;
+
   }
   @media (max-width: 480px) {
     width: 343px;
-    left: 16px;
-    top: 156px;
   }
 `;
 export const StyledForm = styled.form`
