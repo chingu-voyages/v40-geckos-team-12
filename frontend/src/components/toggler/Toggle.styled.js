@@ -5,10 +5,14 @@ export const ToggleContainer = styled.div`
   background-color: ${(props) => props.theme.mainContainer};
   position: absolute;
   bottom: 88px;
-  width: 251px;
+  width: 15em;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1.5em;
+  margin-inline: 1.5em;
+
+  @media (max-width: 768px){
+    width: 11em;
+  }
 `;
