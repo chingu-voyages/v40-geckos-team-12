@@ -40,6 +40,10 @@ export const ModalContainer = styled.div`
   transform: translateY(-50%);
   padding: 2em;
   position: relative;
+
+  @media (max-width: 500px){
+    width: 370px;
+  }
 `;
 
 export const KebabIcon = styled(Kebab)`
