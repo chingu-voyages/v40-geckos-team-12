@@ -4,9 +4,9 @@ import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 20px 20px;
   border-bottom: 2px solid ${(props) => props.theme.subTaskBG};
 
   @media (max-width: 770px){
