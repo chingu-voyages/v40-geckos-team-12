@@ -1,14 +1,16 @@
 import React from "react";
 import { List } from "../Sidebar.styled";
+import '../../../css/global.css'
 
 const ListItem = ({ text, svg }) => {
   return (
-    <>
-      <List activeClassName="active">
+    <div>
+      <List>
         <img style={{ paddingRight: 16 }} src={svg} alt="list-icon" />
+
         <span>{text}</span>
       </List>
-    </>
+    </div>
   );
 };
 
