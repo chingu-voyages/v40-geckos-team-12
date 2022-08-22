@@ -25,6 +25,5 @@ export const List = styled.li`
     color: ${(props) => props.theme.boardHoverTextColor};
   }
 
- 
 `;
 

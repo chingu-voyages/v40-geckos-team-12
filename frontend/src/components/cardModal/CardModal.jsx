@@ -6,6 +6,7 @@ import {
   move_from_todo_to_doing,
   move_from_doing_to_done,
   removeTask,
+  get_single_task,
 } from "../../features/slices/tasksSlice/tasksSlice";
 
 import {
@@ -25,7 +26,12 @@ import {
   EditOrDeleteLabel,
 } from "./CardModal.styled.js";
 
-const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
+const CardModal = ({
+  handleCardModalToggle,
+  cardModalToggle,
+  modalTask,
+  handleEditTaskModalToggle,
+}) => {
   // Gives us an array of task objects
   const tasks = useSelector(selectTasks);
   // Redux
@@ -67,8 +73,12 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
     handleCardModalToggle();
   };
 
-  const handleEdit = (e) => {
-    console.log(e.target.value);
+  const handleEdit = (id) => {
+    console.log(id);
+    setOpenEditModal(false);
+    handleCardModalToggle();
+    dispatch(get_single_task(id));
+    handleEditTaskModalToggle();
   };
 
   return (
@@ -86,7 +96,9 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
           </TitleKebabContainer>
           {openEditModal && (
             <EditOrDeleteWrapper>
-              <EditOrDeleteLabel onClick={handleEdit}>Edit</EditOrDeleteLabel>
+              <EditOrDeleteLabel onClick={() => handleEdit(currentTask.id)}>
+                Edit
+              </EditOrDeleteLabel>
               <EditOrDeleteLabel
                 onClick={() => handleDelete(currentTask.id)}
                 warning
