@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg";
 import { ReactComponent as Plus } from "../../assets/icon-add-task-mobile.svg";
 import { ReactComponent as Logo } from "../../assets/logo-mobile.svg";
+import { ReactComponent as ChrevronUp } from "../../assets/icon-chevron-up.svg"
+import { ReactComponent as ChrevronDown } from "../../assets/icon-chevron-down.svg"
 
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
@@ -75,6 +77,17 @@ export const PlusIcon = styled(Plus)`
 
 `;
 
+export const IconChevronUp = styled(ChrevronUp)`
+`;
+export const IconChevronDown = styled(ChrevronDown)`
+
+`;
+
+export const Chevron = styled.div`
+  width: 20px;
+  text-align: center;
+`;
+
 export const TaskSpan = styled.span`
   display: inline-block;
   vertical-align: middle;
@@ -87,4 +100,5 @@ export const TaskSpan = styled.span`
 export const TitleContainer = styled.div`
   display: flex;
   gap: 1em;
+  align-items: center;
 `

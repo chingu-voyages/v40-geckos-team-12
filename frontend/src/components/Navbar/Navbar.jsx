@@ -9,6 +9,9 @@ import {
   TaskSpan,
   LogoIcon,
   TitleContainer,
+  IconChevronUp,
+  IconChevronDown,
+  Chevron,
 } from "./Navbar.Styled";
 
 const Navbar = ({ setShowAddTaskModal }) => {
@@ -17,6 +20,9 @@ const Navbar = ({ setShowAddTaskModal }) => {
       <TitleContainer>
         <LogoIcon/>
         <NavTitle>Platform Launch</NavTitle>
+        <Chevron>
+          <IconChevronDown />
+        </Chevron>
       </TitleContainer>
       <NavButtonWrapper>
         <NavButton onClick={() => setShowAddTaskModal((previous) => !previous)}>
