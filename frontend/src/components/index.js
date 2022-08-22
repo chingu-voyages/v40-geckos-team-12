@@ -16,6 +16,10 @@ import ToggleSwitch from "./toggler/ToggleSwitch";
 
 import AddTaskModal from "./forms/add_task_modal/AddTaskModal";
 
+import EditTaskModal from "./forms/edit_task_modal/EditTaskModal";
+
+import EditForm from "./forms/edit_form_component/EditForm";
+
 export {
   Card,
   Column,
@@ -27,4 +31,6 @@ export {
   ToggleSwitch,
   Navbar,
   AddTaskModal,
+  EditTaskModal,
+  EditForm,
 };

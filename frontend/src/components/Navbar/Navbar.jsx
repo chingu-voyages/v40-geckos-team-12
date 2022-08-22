@@ -25,7 +25,7 @@ const Navbar = ({ setShowAddTaskModal }) => {
 
   const isLightTheme = useSelector(selectIsLightTheme);
    const openSidebar = ()=>{
-    document.getElementById("sidebar").style.width="300px"
+    document.getElementById("sidebar").style.width="350px"
     document.getElementById("sidebar").style.display="block"
     console.log(isSidebarOpen, "is side bar open")
      dispatch(toggleisSidebarOpen(true))

@@ -5,10 +5,11 @@ import {
   SidebarContainer,
   Navbar,
   AddTaskModal,
+  EditTaskModal,
 } from "./components";
 import { ColumnContainer } from "../src/components/column/columnContainer/ColumnContainer.styled";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./themes/themes";
 import { selectIsLightTheme } from "./features/slices/themeSlice/themeSlice";
@@ -26,6 +27,7 @@ function App() {
   const [modalTask, setModaltask] = useState({});
 
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
+  const [showEditTaskModal, setShowEditTaskModal] = useState(false);
 
   const todoTasks = useSelector(selectTodoTasks);
   const doingTasks = useSelector(selectDoingTasks);
@@ -39,6 +41,9 @@ function App() {
     setShowAddTaskModal(!showAddTaskModal);
   }
 
+  function handleEditTaskModalToggle() {
+    setShowEditTaskModal(!showEditTaskModal);
+  }
   return (
     <>
       <div style={{ display: "flex" }}>
@@ -74,11 +79,18 @@ function App() {
 
           {cardModalToggle && (
             <CardModal
+              handleEditTaskModalToggle={handleEditTaskModalToggle}
               modalTask={modalTask}
               handleCardModalToggle={handleCardModalToggle}
               cardModalToggle={cardModalToggle}
             />
           )}
+          {showEditTaskModal && (
+            <EditTaskModal
+              handleEditTaskModalToggle={handleEditTaskModalToggle}
+            />
+          )}
+
           {showAddTaskModal && (
             <AddTaskModal
               handleCreateTaskModalToggle={handleCreateTaskModalToggle}

@@ -18,11 +18,12 @@ export const List = styled.li`
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.createSubTaskText};
+    background-color: ${(props) => props.theme.boardHoverBg};
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    color: #fff;
+    color: ${(props) => props.theme.boardHoverTextColor};
   }
+
 `;
 
 export const HideSidebar = styled.div`
