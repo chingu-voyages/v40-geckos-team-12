@@ -9,6 +9,7 @@ import {
 } from "./components";
 import { MainContainer } from "./components/container/MainContainer.styled";
 import { ColumnContainer } from "components/container/ColumnContainer.styled";
+import { MasterContainer } from "components/container/MasterContainer.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -46,7 +47,7 @@ function App() {
   }
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <MasterContainer>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <SidebarContainer />
 
@@ -97,7 +98,7 @@ function App() {
             />
           )}
         </ThemeProvider>
-      </div>
+      </MasterContainer>
     </>
   );
 }
