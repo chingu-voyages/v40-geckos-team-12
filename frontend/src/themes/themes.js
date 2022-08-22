@@ -23,6 +23,14 @@ export const lightTheme = {
 
   //Modal subtask background
   subTaskBG: "#E4EBFA",
+
+  //Active task board colors
+  boardHoverBg: "#E4EBFA",
+  boardHoverTextColor: "#635FC7",
+  activeBoardBg: "#635FC7",
+  activeBoardTextColor: "#FFFFFF",
+
+
 };
 export const darkTheme = {
   main: "#2B2C37",
@@ -48,4 +56,10 @@ export const darkTheme = {
 
   //Modal subtask background
   subTaskBG: "#3E3F4E",
+
+  //Active task board colours
+  boardHoverBg: "#FFFFFF",
+  boardHoverTextColor: "#635FC7",
+  activeBoardBg: "#635FC7",
+  activeBoardTextColor: "#FFFFFF",
 };

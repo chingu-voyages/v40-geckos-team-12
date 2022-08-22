@@ -24,14 +24,10 @@ export const List = styled.li`
   padding-left: 1.5em;
 
   &:hover {
-    background-color: ${(props) => props.theme.boardHover};
-    color: #635FC7;
+    background-color: ${(props) => props.theme.boardHoverBg};
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-  }
-
-  &.active {
-    color: ${(props) => props.theme.orange};
+    color: #635FC7;
   }
 `;
 
@@ -42,3 +38,4 @@ export const SpanBoard = styled.span`
   font-weight: bold;
   text-transform: uppercase;
 `
+
