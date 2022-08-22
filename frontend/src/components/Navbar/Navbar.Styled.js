@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as Kebab } from "../../assets/icon-vertical-ellipsis.svg";
-import { ReactComponent as Plus } from "../../assets/icon-add-task-mobile.svg"
+import { ReactComponent as Plus } from "../../assets/icon-add-task-mobile.svg";
+import { ReactComponent as Logo } from "../../assets/logo-mobile.svg";
 
 export const NavContainer = styled.nav`
   background-color: ${(props) => props.theme.main};
@@ -59,8 +60,12 @@ export const NavMenuIcon = styled.span`
   color: black;
 `;
 
-export const KebabIcon = styled(Kebab)`
-  
+export const KebabIcon = styled(Kebab)``;
+
+export const LogoIcon = styled(Logo)`
+@media (min-width: 500px){
+  display:none;
+}
 `;
 
 export const PlusIcon = styled(Plus)`
@@ -78,3 +83,8 @@ export const TaskSpan = styled.span`
     display: none;
   }
 `;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  gap: 1em;
+`

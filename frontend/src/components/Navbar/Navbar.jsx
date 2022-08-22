@@ -7,12 +7,17 @@ import {
   KebabIcon,
   PlusIcon,
   TaskSpan,
+  LogoIcon,
+  TitleContainer,
 } from "./Navbar.Styled";
 
 const Navbar = ({ setShowAddTaskModal }) => {
   return (
     <NavContainer>
-      <NavTitle>Platform Launch</NavTitle>
+      <TitleContainer>
+        <LogoIcon/>
+        <NavTitle>Platform Launch</NavTitle>
+      </TitleContainer>
       <NavButtonWrapper>
         <NavButton onClick={() => setShowAddTaskModal((previous) => !previous)}>
           <PlusIcon/><TaskSpan>+ Add New Task</TaskSpan>
