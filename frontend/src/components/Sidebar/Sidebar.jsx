@@ -42,7 +42,7 @@ const Sidenav = () => {
       <span style={{ color: isLightTheme ? "#000" : "#fff" }}>All boards</span>
 
       <ListContainer>
-        {texts.map((item, index) => <div key={index} onClick={() => handleClick(index)} className={index === position ? 'active' : null}><ListItem text={item} svg={iconBoard} /></div>)}
+        {texts.map((item, index) => <div key={index} className={index === position ? 'active' : null}><ListItem onClick={() => handleClick(index)} text={item} svg={iconBoard} /></div>)}
       </ListContainer>
       
       <ToggleSwitch handleToggle={handleToggle} />

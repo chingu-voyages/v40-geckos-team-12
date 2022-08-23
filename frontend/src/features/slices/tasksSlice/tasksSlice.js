@@ -34,6 +34,15 @@ const tasksSlice = createSlice({
         return task;
       });
     },
+    move_from_done_to_todo: (state, action) => {
+      console.log(action.payload);
+      state.tasks = state.tasks.map((task) => {
+        if(task.id === action.payload){
+          task.status = "todo"
+        }
+        return task;
+      })
+    }
   },
 });
 
@@ -42,6 +51,8 @@ export const {
   removeTask,
   move_from_todo_to_doing,
   move_from_doing_to_done,
+  move_from_done_to_todo,
+
 } = tasksSlice.actions;
 
 export const selectTasks = (state) => state.tasks.tasks;

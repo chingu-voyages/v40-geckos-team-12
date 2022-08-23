@@ -5,6 +5,7 @@ import {
   selectTasks,
   move_from_todo_to_doing,
   move_from_doing_to_done,
+  move_from_done_to_todo,
   removeTask,
 } from "../../features/slices/tasksSlice/tasksSlice";
 
@@ -44,6 +45,9 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
     } else if (e.target.value === "Done") {
       setCurrentTask({ ...currentTask, status: e.target.value });
       dispatch(move_from_doing_to_done(currentTask.id));
+    }else if(e.target.value === "Todo"){
+      setCurrentTask({...currentTask, status: e.target.value});
+      dispatch(move_from_done_to_todo(currentTask.id));
     }
   };
 
@@ -117,6 +121,7 @@ const CardModal = ({ handleCardModalToggle, cardModalToggle, modalTask }) => {
               value={currentTask.status}
               onChange={(e) => handleChange(e)}
             >
+              <StyledOption>Select status</StyledOption>
               <StyledOption>Todo</StyledOption>
               <StyledOption>Doing</StyledOption>
               <StyledOption>Done</StyledOption>

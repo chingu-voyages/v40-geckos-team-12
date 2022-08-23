@@ -25,6 +25,14 @@ export const List = styled.li`
     color: ${(props) => props.theme.boardHoverTextColor};
   }
 
+  &.active{
+    background-color: ${(props) => props.theme.activeBoardBg};
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: ${(props) => props.theme.activeBoardTextColor};
+
+  }
+
  
 `;
 
