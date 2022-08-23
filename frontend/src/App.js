@@ -6,6 +6,7 @@ import {
   Navbar,
   AddTaskModal,
   EditTaskModal,
+  MobileSidebar,
 } from "./components";
 import { MainContainer } from "./components/container/MainContainer.styled";
 import { ColumnContainer } from "components/container/ColumnContainer.styled";
@@ -30,6 +31,8 @@ function App() {
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
   const [showEditTaskModal, setShowEditTaskModal] = useState(false);
 
+  const [MobileModalToggle, setMobileModalToggle] = useState(false);
+
   const todoTasks = useSelector(selectTodoTasks);
   const doingTasks = useSelector(selectDoingTasks);
   const doneTasks = useSelector(selectDoneTasks);
@@ -45,6 +48,13 @@ function App() {
   function handleEditTaskModalToggle() {
     setShowEditTaskModal(!showEditTaskModal);
   }
+
+  function handleMobileModalToggle() {
+    setMobileModalToggle(!MobileModalToggle);
+  }
+
+  console.log(MobileModalToggle);
+
   return (
     <>
       <MasterContainer>
@@ -55,8 +65,11 @@ function App() {
             <Navbar
               cardModalToggle={cardModalToggle}
               setShowAddTaskModal={setShowAddTaskModal}
+              handleMobileModalToggle={handleMobileModalToggle}
+              MobileModalToggle={MobileModalToggle}
             />
             <ColumnContainer>
+            {MobileModalToggle && <MobileSidebar MobileModalToggle={MobileModalToggle}/>}
               <Column
                 title="TODO"
                 orbColor="#49C4E5"

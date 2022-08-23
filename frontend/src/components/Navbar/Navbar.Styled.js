@@ -17,6 +17,11 @@ export const NavContainer = styled.nav`
     padding: 10px 15px;
   }
 
+  @media (max-width: 500px){
+    z-index: 200;
+    position: relative;
+  }
+
 `;
 
 export const NavTitle = styled.h4`

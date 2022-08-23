@@ -4,6 +4,8 @@ import Column from "./column/Column";
 
 import Navbar from "./Navbar/Navbar";
 
+import MobileSidebar from "./MobileSidebar/MobileSidebar";
+
 import ListItem from "./Sidebar/sideBarListItem/ListItem";
 
 import SidebarContainer from "./SidebarContainer/SidebarContainer";
@@ -33,4 +35,5 @@ export {
   AddTaskModal,
   EditTaskModal,
   EditForm,
+  MobileSidebar,
 };
