@@ -78,9 +78,14 @@ export const PlusIcon = styled(Plus)`
 `;
 
 export const IconChevronUp = styled(ChrevronUp)`
+  @media (min-width: 500px){
+    display: none;
+  }
 `;
 export const IconChevronDown = styled(ChrevronDown)`
-
+  @media (min-width: 500px){
+    display: none;
+  }
 `;
 
 export const Chevron = styled.div`
