@@ -46,4 +46,11 @@ export const NavMenuIcon = styled.span`
   color: black;
 `;
 
+export const ShowSidebar = styled.div`
+  position:fixed;
+  bottom: 5%;
+  left:0%;
+  
+`;
+
 export const KebabIcon = styled(Kebab)``;

@@ -5,6 +5,7 @@ import {
   NavButtonWrapper,
   NavButton,
   KebabIcon,
+  ShowSidebar,
 } from "./Navbar.Styled";
 import lightThemeLogo from "../../assets/logo-light.svg";
 import darkThemeLogo from "../../assets/logo-dark.svg";
@@ -13,6 +14,7 @@ import {
   selectIsLightTheme, selectIsSidebarOpen, toggleisSidebarOpen
 } from "../../features/slices/themeSlice/themeSlice";
 import { useEffect } from "react";
+import iconShowSidebar from "../../assets/open-sidebar.png"
 
 const Navbar = ({ setShowAddTaskModal }) => {
 
@@ -32,13 +34,12 @@ const Navbar = ({ setShowAddTaskModal }) => {
    }
   return (
     <NavContainer>
-      {!isSidebarOpen && <div onClick={openSidebar}>
+      {!isSidebarOpen && <ShowSidebar onClick={openSidebar}>
         <img
-          src={isLightTheme ? darkThemeLogo : lightThemeLogo}
-          style={{ color: "white" }}
-          alt="logo"
+          src={iconShowSidebar}
+          alt="show-sidebar"
         />
-      </div>}
+      </ShowSidebar>}
       <NavTitle>Platform Launch</NavTitle>
       <NavButtonWrapper>
         <NavButton onClick={() => setShowAddTaskModal((previous) => !previous)}>
