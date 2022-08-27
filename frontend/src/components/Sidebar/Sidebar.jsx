@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { ListContainer, Brand } from "./Sidebar.styled";
+import { ListContainer, Brand, Container, SpanBoard } from "./Sidebar.styled";
 import { ListItem, ToggleSwitch } from "../../components";
 import lightThemeLogo from "../../assets/logo-light.svg";
 import darkThemeLogo from "../../assets/logo-dark.svg";
 import { useSelector, useDispatch } from "react-redux";
-import '../../css/global.css'
 
 import iconBoard from "../../assets/icon-board.svg";
 import {
@@ -32,20 +31,21 @@ const Sidenav = () => {
 
   return (
     <>
-      <Brand style={{ marginBottom: "54px" }}>
+      <Container>
+      <Brand>
         <img
           src={isLightTheme ? darkThemeLogo : lightThemeLogo}
           style={{ color: "white" }}
           alt=""
         />
       </Brand>
-      <span style={{ color: isLightTheme ? "#000" : "#fff" }}>All boards</span>
-
+      <SpanBoard style={{color: '#828FA3'}}>All boards</SpanBoard>
       <ListContainer>
         {texts.map((item, index) => <div key={index} onClick={() => handleClick(index)} className={index === position ? 'active' : null}><ListItem text={item} svg={iconBoard} /></div>)}
       </ListContainer>
       
       <ToggleSwitch handleToggle={handleToggle} />
+      </Container>
     </>
   );
 };

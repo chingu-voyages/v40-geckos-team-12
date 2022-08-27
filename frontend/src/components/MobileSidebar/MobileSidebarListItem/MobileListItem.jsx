@@ -1,5 +1,6 @@
 import React from "react";
-import { List } from "../Sidebar.styled";
+import { List } from "../MobileSidebar.styled";
+import '../../../css/global.css'
 
 const ListItem = ({ text, svg }) => {
   return (

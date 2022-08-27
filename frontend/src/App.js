@@ -6,8 +6,10 @@ import {
   Navbar,
   AddTaskModal,
   EditTaskModal,
+  MobileSidebar,
 } from "./components";
-import { ColumnContainer } from "../src/components/column/columnContainer/ColumnContainer.styled";
+
+import { ColumnContainer, MasterContainer, MainContainer } from "components/container/Containers.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -19,7 +21,6 @@ import {
   selectDoingTasks,
   selectDoneTasks,
 } from "./features/slices/tasksSlice/tasksSlice";
-import { toggleTheme } from "./features/slices/themeSlice/themeSlice";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
@@ -28,6 +29,8 @@ function App() {
 
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
   const [showEditTaskModal, setShowEditTaskModal] = useState(false);
+
+  const [MobileModalToggle, setMobileModalToggle] = useState(false);
 
   const todoTasks = useSelector(selectTodoTasks);
   const doingTasks = useSelector(selectDoingTasks);
@@ -44,18 +47,26 @@ function App() {
   function handleEditTaskModalToggle() {
     setShowEditTaskModal(!showEditTaskModal);
   }
+
+  function handleMobileModalToggle() {
+    setMobileModalToggle(!MobileModalToggle);
+  }
+
   return (
     <>
-      <div style={{ display: "flex" }}>
+      <MasterContainer>
         <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
           <SidebarContainer />
 
-          <ColumnContainer>
+          <MainContainer>
             <Navbar
               cardModalToggle={cardModalToggle}
               setShowAddTaskModal={setShowAddTaskModal}
+              handleMobileModalToggle={handleMobileModalToggle}
+              MobileModalToggle={MobileModalToggle}
             />
-            <div style={{ display: "flex" }}>
+            <ColumnContainer>
+            {MobileModalToggle && <MobileSidebar MobileModalToggle={MobileModalToggle}/>}
               <Column
                 title="TODO"
                 orbColor="#49C4E5"
@@ -74,8 +85,8 @@ function App() {
                 handleCardModalToggle={handleCardModalToggle}
                 tasks={doneTasks}
               />
-            </div>
-          </ColumnContainer>
+            </ColumnContainer>
+          </MainContainer>
 
           {cardModalToggle && (
             <CardModal
@@ -97,7 +108,7 @@ function App() {
             />
           )}
         </ThemeProvider>
-      </div>
+      </MasterContainer>
     </>
   );
 }
