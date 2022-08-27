@@ -8,9 +8,8 @@ import {
   EditTaskModal,
   MobileSidebar,
 } from "./components";
-import { MainContainer } from "./components/container/MainContainer.styled";
-import { ColumnContainer } from "components/container/ColumnContainer.styled";
-import { MasterContainer } from "components/container/MasterContainer.styled";
+
+import { ColumnContainer, MasterContainer, MainContainer } from "components/container/app.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
