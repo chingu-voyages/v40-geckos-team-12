@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
   position: absolute;
   left: 0;
   top: 0;
+
+  @media (min-width: 500px){
+    display: none;
+  }
 `;
 
 export const Container = styled.div`
