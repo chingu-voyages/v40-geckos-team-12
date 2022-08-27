@@ -9,7 +9,7 @@ import {
   MobileSidebar,
 } from "./components";
 
-import { ColumnContainer, MasterContainer, MainContainer } from "components/container/app.styled";
+import { ColumnContainer, MasterContainer, MainContainer } from "components/container/Containers.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -51,8 +51,6 @@ function App() {
   function handleMobileModalToggle() {
     setMobileModalToggle(!MobileModalToggle);
   }
-
-  console.log(MobileModalToggle);
 
   return (
     <>
