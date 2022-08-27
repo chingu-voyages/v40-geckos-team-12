@@ -4,7 +4,6 @@ import { ListItem, ToggleSwitch } from "../../components";
 import lightThemeLogo from "../../assets/logo-light.svg";
 import darkThemeLogo from "../../assets/logo-dark.svg";
 import { useSelector, useDispatch } from "react-redux";
-import '../../css/global.css'
 
 import iconBoard from "../../assets/icon-board.svg";
 import {

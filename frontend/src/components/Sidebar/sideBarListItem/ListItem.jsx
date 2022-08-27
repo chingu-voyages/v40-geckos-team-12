@@ -1,6 +1,5 @@
 import React from "react";
 import { List } from "../Sidebar.styled";
-import '../../../css/global.css'
 
 const ListItem = ({ text, svg }) => {
   return (
