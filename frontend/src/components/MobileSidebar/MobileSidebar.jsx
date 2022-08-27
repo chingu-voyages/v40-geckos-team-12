@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { ListItem, ToggleSwitch } from "../../components";
 import { useDispatch } from "react-redux";
-import '../../css/global.css'
 
 import { toggleTheme } from "../../features/slices/themeSlice/themeSlice";
 
