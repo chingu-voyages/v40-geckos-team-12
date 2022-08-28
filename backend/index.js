@@ -19,11 +19,13 @@ const {
   getTasks,
   createTask,
   deleteTask,
+  updateTask,
 } = require("./controllers/TaskController");
 
 app.get("/", getTasks);
 app.post("/tasks", createTask);
 app.delete("/tasks/:id", deleteTask);
+app.put("/tasks/:id", updateTask);
 
 app.listen(4000, () => {
   console.log("Server is running on port 4000");

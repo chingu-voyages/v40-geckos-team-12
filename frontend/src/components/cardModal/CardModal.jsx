@@ -40,6 +40,7 @@ const CardModal = ({
   // Set state based on a specific card/task
 
   const [currentTask, setCurrentTask] = useState(modalTask);
+
   const [openEditModal, setOpenEditModal] = useState(false);
 
   // updates the task.status state when a dropdown option is selected and dispatches it
@@ -47,10 +48,11 @@ const CardModal = ({
     e.preventDefault();
     if (e.target.value === "Doing") {
       setCurrentTask({ ...currentTask, status: e.target.value });
-      dispatch(move_from_todo_to_doing(currentTask.id));
+      dispatch(move_from_todo_to_doing(currentTask._id));
+      console.log(currentTask._id);
     } else if (e.target.value === "Done") {
       setCurrentTask({ ...currentTask, status: e.target.value });
-      dispatch(move_from_doing_to_done(currentTask.id));
+      dispatch(move_from_doing_to_done(currentTask._id));
     }
   };
 
@@ -80,8 +82,7 @@ const CardModal = ({
     handleCardModalToggle();
   };
 
-  const handleEdit = (id) => {
-    console.log(id);
+  const handleEdit = async (id) => {
     setOpenEditModal(false);
     handleCardModalToggle();
     dispatch(get_single_task(id));
@@ -103,7 +104,7 @@ const CardModal = ({
           </TitleKebabContainer>
           {openEditModal && (
             <EditOrDeleteWrapper>
-              <EditOrDeleteLabel onClick={() => handleEdit(currentTask.id)}>
+              <EditOrDeleteLabel onClick={() => handleEdit(currentTask._id)}>
                 Edit
               </EditOrDeleteLabel>
               <EditOrDeleteLabel

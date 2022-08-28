@@ -36,9 +36,10 @@ const tasksSlice = createSlice({
     },
 
     move_from_todo_to_doing: (state, action) => {
+      console.log("functin running");
       console.log(action.payload);
       state.tasks = state.tasks.map((task) => {
-        if (task.id === action.payload) {
+        if (task._id === action.payload) {
           task.status = "doing";
         }
         return task;
@@ -47,14 +48,15 @@ const tasksSlice = createSlice({
     move_from_doing_to_done: (state, action) => {
       console.log(action.payload);
       state.tasks = state.tasks.map((task) => {
-        if (task.id === action.payload) {
+        if (task._id === action.payload) {
           task.status = "done";
         }
         return task;
       });
     },
     get_single_task: (state, { payload }) => {
-      state.task = state.tasks.find((task) => task.id === payload);
+      console.log("payload is here  ", payload);
+      state.task = state.tasks.find((task) => task._id === payload);
     },
   },
   extraReducers: (builder) => {

@@ -16,7 +16,6 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledFormContainer = styled.div`
-  background-color: ${(props) => props.theme.modalBG};
   max-width: 450px;
   position: relative;
   margin: 0 auto;
@@ -26,7 +25,6 @@ export const StyledFormContainer = styled.div`
   padding: 2rem;
 
   @media (max-width: 768px) {
-
   }
   @media (max-width: 480px) {
     width: 343px;
