@@ -15,10 +15,15 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (err) => {
   }
 });
 
-const { getTasks, createTask } = require("./controllers/TaskController");
+const {
+  getTasks,
+  createTask,
+  deleteTask,
+} = require("./controllers/TaskController");
 
 app.get("/", getTasks);
 app.post("/tasks", createTask);
+app.delete("/tasks/:id", deleteTask);
 
 app.listen(4000, () => {
   console.log("Server is running on port 4000");

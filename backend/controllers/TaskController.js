@@ -19,4 +19,21 @@ module.exports = {
       res.json({ message: err });
     }
   },
+  deleteTask: async (req, res) => {
+    try {
+      const task = await Task.findByIdAndDelete(req.params.id);
+      if (!task) {
+        return res.status(404).send({
+          message: "Task not found with id " + req.params.id,
+        });
+      }
+      res.send({
+        message: `Task with the id of ${task._id} deleted successfully!`,
+        id: task._id,
+        data: "I am now defined",
+      });
+    } catch (err) {
+      res.json({ message: err });
+    }
+  },
 };
