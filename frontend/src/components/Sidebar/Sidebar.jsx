@@ -16,35 +16,40 @@ const Sidenav = () => {
   const dispatch = useDispatch();
   const isLightTheme = useSelector(selectIsLightTheme);
   const [position, setPosition] = useState(-1);
-  const texts = ['Platform launch', 'Marketing plan', 'Roadmap'];
-
+  const texts = ["Platform launch", "Marketing plan", "Roadmap"];
 
   const handleClick = (index) => {
     setPosition(index);
-    console.log('clicked');
-  }
+  };
 
   const handleToggle = () => {
     dispatch(toggleTheme());
   };
 
-
   return (
     <>
       <Container>
-      <Brand>
-        <img
-          src={isLightTheme ? darkThemeLogo : lightThemeLogo}
-          style={{ color: "white" }}
-          alt=""
-        />
-      </Brand>
-      <SpanBoard style={{color: '#828FA3'}}>All boards</SpanBoard>
-      <ListContainer>
-        {texts.map((item, index) => <div key={index} onClick={() => handleClick(index)} className={index === position ? 'active' : null}><ListItem text={item} svg={iconBoard} /></div>)}
-      </ListContainer>
-      
-      <ToggleSwitch handleToggle={handleToggle} />
+        <Brand>
+          <img
+            src={isLightTheme ? darkThemeLogo : lightThemeLogo}
+            style={{ color: "white" }}
+            alt=""
+          />
+        </Brand>
+        <SpanBoard style={{ color: "#828FA3" }}>All boards</SpanBoard>
+        <ListContainer>
+          {texts.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleClick(index)}
+              className={index === position ? "active" : null}
+            >
+              <ListItem text={item} svg={iconBoard} />
+            </div>
+          ))}
+        </ListContainer>
+
+        <ToggleSwitch handleToggle={handleToggle} />
       </Container>
     </>
   );

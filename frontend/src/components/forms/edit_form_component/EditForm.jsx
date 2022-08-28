@@ -66,8 +66,6 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
         subtasks: subTasks,
       });
       dispatch(editTask(data));
-
-      console.log(data);
     } catch {
       console.log("error");
     }

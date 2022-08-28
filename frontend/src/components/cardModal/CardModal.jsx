@@ -49,7 +49,6 @@ const CardModal = ({
     if (e.target.value === "Doing") {
       setCurrentTask({ ...currentTask, status: e.target.value });
       dispatch(move_from_todo_to_doing(currentTask._id));
-      console.log(currentTask._id);
     } else if (e.target.value === "Done") {
       setCurrentTask({ ...currentTask, status: e.target.value });
       dispatch(move_from_doing_to_done(currentTask._id));
@@ -73,7 +72,6 @@ const CardModal = ({
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(`http://localhost:4000/tasks/${id}`);
-      console.log("data is: ", data);
       dispatch(removeTask(data.id));
     } catch (error) {
       console.log(error);
