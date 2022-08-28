@@ -42,12 +42,13 @@ module.exports = {
         new: true,
       });
       if (!task) {
-        return res.status(404).send({
+        res.status(404).send({
           message: "Task not found with id " + req.params.id,
         });
+      } else {
+        console.log(task);
+        res.status(200).send(task);
       }
-
-      return res.send(task);
     } catch (err) {
       res.json({ message: err });
     }

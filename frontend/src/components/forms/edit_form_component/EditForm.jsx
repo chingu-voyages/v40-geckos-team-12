@@ -56,19 +56,25 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
     setSubTask(newSubTasks);
   };
 
-  const submitEditTaskForm = (e, id) => {
+  const submitEditTaskForm = async (e, id) => {
     e.preventDefault();
     setTaskData({ ...taskData, subtasks: subTasks });
-    dispatch(editTask({ ...taskData, subtasks: subTasks }));
-    handleEditTaskModalToggle();
-
-    // send a put request ad update the database with the new task data.
 
     try {
-      axios.put(`http://localhost:4000/tasks/${id}`, taskData);
+      const { data } = await axios.put(`http://localhost:4000/tasks/${id}`, {
+        ...taskData,
+        subtasks: subTasks,
+      });
+      dispatch(editTask(data));
+
+      console.log(data);
     } catch {
       console.log("error");
     }
+
+    handleEditTaskModalToggle();
+
+    // send a put request ad update the database with the new task data.
   };
   return (
     <StyledFormContainer onClick={(e) => e.stopPropagation()}>
