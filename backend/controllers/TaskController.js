@@ -36,4 +36,20 @@ module.exports = {
       res.json({ message: err });
     }
   },
+  updateTask: async (req, res) => {
+    try {
+      const task = await Task.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+      });
+      if (!task) {
+        return res.status(404).send({
+          message: "Task not found with id " + req.params.id,
+        });
+      }
+
+      return res.send(task);
+    } catch (err) {
+      res.json({ message: err });
+    }
+  },
 };
