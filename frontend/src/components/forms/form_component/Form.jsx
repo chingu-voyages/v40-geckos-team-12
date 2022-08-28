@@ -39,12 +39,11 @@ const Form = ({ handleCreateTaskModalToggle }) => {
         "http://localhost:4000/tasks",
         newTaskData
       );
-      console.log(data);
+      dispatch(addTask(data));
     } catch (error) {
       console.log(error);
     }
 
-    dispatch(addTask(newTaskData));
     setNewTaskData({
       title: "",
       description: "",

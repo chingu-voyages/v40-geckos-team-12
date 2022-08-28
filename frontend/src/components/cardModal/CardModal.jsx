@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { CheckBox } from "../../components";
 import {
@@ -67,8 +68,14 @@ const CardModal = ({
     setChecked(subTaskStatus);
   }
 
-  const handleDelete = (id) => {
-    dispatch(removeTask(id));
+  const handleDelete = async (id) => {
+    try {
+      const { data } = await axios.delete(`http://localhost:4000/tasks/${id}`);
+      console.log("data is: ", data);
+      dispatch(removeTask(data.id));
+    } catch (error) {
+      console.log(error);
+    }
     setOpenEditModal(false);
     handleCardModalToggle();
   };
@@ -100,7 +107,7 @@ const CardModal = ({
                 Edit
               </EditOrDeleteLabel>
               <EditOrDeleteLabel
-                onClick={() => handleDelete(currentTask.id)}
+                onClick={() => handleDelete(currentTask._id)}
                 warning
               >
                 Delete
