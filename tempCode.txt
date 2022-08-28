@@ -1,7 +1,0 @@
-   {/* <button onClick={() => dispatch(toggleTheme())}>Toggle</button>
-        <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
-          <div>sidebar</div>
-          <Column />
-          <Column />
-          <Column />
-        </ThemeProvider> */}

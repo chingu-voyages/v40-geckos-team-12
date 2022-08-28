@@ -1,10 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const initialState = {
   tasks: [],
   task: {},
 };
+
+//Create an Async Thunk to get all the tasks from the database
+export const getTasks = createAsyncThunk("tasks/getTasks", async () => {
+  const { data } = await axios.get("http://localhost:4000");
+
+  return data;
+});
 
 const tasksSlice = createSlice({
   name: "tasks",
@@ -47,6 +55,20 @@ const tasksSlice = createSlice({
     get_single_task: (state, { payload }) => {
       state.task = state.tasks.find((task) => task.id === payload);
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getTasks.fulfilled, (state, { payload }) => {
+      console.log("fulfilled", payload);
+      state.tasks = payload;
+    });
+    builder.addCase(getTasks.rejected, (state, { payload }) => {
+      console.log("rejected");
+      state.tasks = [];
+    });
+    builder.addCase(getTasks.pending, (state, { payload }) => {
+      console.log("pending");
+      state.tasks = [];
+    });
   },
 });
 

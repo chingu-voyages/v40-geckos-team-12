@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import {
   Column,
   CardModal,
@@ -9,7 +10,11 @@ import {
   MobileSidebar,
 } from "./components";
 
-import { ColumnContainer, MasterContainer, MainContainer } from "components/container/Containers.styled";
+import {
+  ColumnContainer,
+  MasterContainer,
+  MainContainer,
+} from "components/container/Containers.styled";
 
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
@@ -20,6 +25,7 @@ import {
   selectTodoTasks,
   selectDoingTasks,
   selectDoneTasks,
+  getTasks,
 } from "./features/slices/tasksSlice/tasksSlice";
 
 function App() {
@@ -35,6 +41,7 @@ function App() {
   const todoTasks = useSelector(selectTodoTasks);
   const doingTasks = useSelector(selectDoingTasks);
   const doneTasks = useSelector(selectDoneTasks);
+  const dispatch = useDispatch();
 
   function handleCardModalToggle(task) {
     setModaltask(task);
@@ -52,6 +59,10 @@ function App() {
     setMobileModalToggle(!MobileModalToggle);
   }
 
+  useEffect(() => {
+    dispatch(getTasks());
+  }, []);
+
   return (
     <>
       <MasterContainer>
@@ -66,7 +77,9 @@ function App() {
               MobileModalToggle={MobileModalToggle}
             />
             <ColumnContainer>
-            {MobileModalToggle && <MobileSidebar MobileModalToggle={MobileModalToggle}/>}
+              {MobileModalToggle && (
+                <MobileSidebar MobileModalToggle={MobileModalToggle} />
+              )}
               <Column
                 title="TODO"
                 orbColor="#49C4E5"

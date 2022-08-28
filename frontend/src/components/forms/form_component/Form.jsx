@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "features/slices/tasksSlice/tasksSlice";
+import axios from "axios";
 
 import {
   LabelInputContainer,
@@ -31,8 +32,18 @@ const Form = ({ handleCreateTaskModalToggle }) => {
     });
     setSubTask("");
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    try {
+      const { data } = await axios.post(
+        "http://localhost:4000/tasks",
+        newTaskData
+      );
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+
     dispatch(addTask(newTaskData));
     setNewTaskData({
       title: "",
