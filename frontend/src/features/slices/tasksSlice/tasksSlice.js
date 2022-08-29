@@ -9,7 +9,7 @@ const initialState = {
 
 //Create an Async Thunk to get all the tasks from the database
 export const getTasks = createAsyncThunk("tasks/getTasks", async () => {
-  const { data } = await axios.get("http://localhost:4000");
+  const { data } = await axios.get("http://localhost:4000/tasks");
 
   return data;
 });
