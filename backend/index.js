@@ -5,7 +5,12 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-console.log(process.env.MONGO_URI);
+
+const taskRouter = require("./routes/tasksRouter");
+const userRouter = require("./routes/userRouter");
+
+app.use("/tasks", taskRouter);
+app.use("/user", userRouter);
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (err) => {
   if (err) {
@@ -14,18 +19,6 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true }, (err) => {
     console.log("Connection Successful");
   }
 });
-
-const {
-  getTasks,
-  createTask,
-  deleteTask,
-  updateTask,
-} = require("./controllers/TaskController");
-
-app.get("/", getTasks);
-app.post("/tasks", createTask);
-app.delete("/tasks/:id", deleteTask);
-app.put("/tasks/:id", updateTask);
 
 app.listen(4000, () => {
   console.log("Server is running on port 4000");
