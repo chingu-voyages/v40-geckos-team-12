@@ -22,6 +22,10 @@ import EditTaskModal from "./forms/edit_task_modal/EditTaskModal";
 
 import EditForm from "./forms/edit_form_component/EditForm";
 
+import Login from "./login/Login";
+
+import Register from "./register/Register";
+
 export {
   Card,
   Column,
@@ -36,4 +40,6 @@ export {
   EditTaskModal,
   EditForm,
   MobileSidebar,
+  Login,
+  Register,
 };
