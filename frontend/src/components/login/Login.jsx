@@ -16,7 +16,8 @@ import {
   StyledButton,
   StyledAuthForm,
   LogoIcon,
-  LogoSpan
+  LogoSpan,
+  AccountDiv
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -85,8 +86,10 @@ const Login = () => {
           </LabelInputContainer>
 
           <StyledButton>Login</StyledButton>
+          <AccountDiv>
           <span>Dont have an account?</span>
           <Link to="/register">Register</Link>
+          </AccountDiv>
         </StyledAuthForm>
       </StyledAuthContainer>
     </>

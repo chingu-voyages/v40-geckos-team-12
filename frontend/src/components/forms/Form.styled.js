@@ -48,6 +48,7 @@ export const StyledAuthForm = styled.form`
   padding: 2em;
   height: fit-content;
   background: #fff;
+  width: 375px;
 `;
 
 export const StyledForm = styled.form`
@@ -150,4 +151,10 @@ export const LogoSpan = styled.div`
   align-items: center;
   justify-content: center;
   color: ${(props) => props.theme.fontColor};
+`;
+
+export const AccountDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
 `;
