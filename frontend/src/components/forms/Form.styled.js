@@ -1,5 +1,6 @@
 //import styled components
 import styled from "styled-components";
+import { ReactComponent as Logo } from "../../assets/logo-mobile.svg";
 
 export const StyledFormHeader = styled.h2`
   color: ${(props) => props.theme.fontColor};
@@ -19,7 +20,7 @@ export const StyledAuthContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${(props) => props.theme.modalBG};
+  background-color: #F4F7FD;
   width: 100%;
   height: 100vh;
 `;
@@ -41,9 +42,12 @@ export const StyledFormContainer = styled.div`
 `;
 
 export const StyledAuthForm = styled.form`
-  border: 2px red solid;
+  border: 1px solid #828FA3;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.15);
   padding: 2em;
   height: fit-content;
+  background: #fff;
 `;
 
 export const StyledForm = styled.form`
@@ -133,5 +137,17 @@ export const StyledSelect = styled.select`
   }
 `;
 export const StyledOption = styled.option`
+  color: ${(props) => props.theme.fontColor};
+`;
+
+export const LogoIcon = styled(Logo)`
+margin-right: 10px;
+`;
+
+export const LogoSpan = styled.div`
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
   color: ${(props) => props.theme.fontColor};
 `;

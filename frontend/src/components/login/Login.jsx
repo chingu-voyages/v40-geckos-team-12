@@ -15,6 +15,8 @@ import {
   StyledLabel,
   StyledButton,
   StyledAuthForm,
+  LogoIcon,
+  LogoSpan
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -60,6 +62,7 @@ const Login = () => {
     <>
       <StyledAuthContainer>
         <StyledAuthForm onSubmit={handleSubmit}>
+        <LogoSpan><LogoIcon />Kanban</LogoSpan>
           <LabelInputContainer>
             <StyledLabel>Email</StyledLabel>
             <StyledInput
