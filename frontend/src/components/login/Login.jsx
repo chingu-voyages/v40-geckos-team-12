@@ -14,7 +14,7 @@ import {
   StyledInput,
   StyledLabel,
   StyledButton,
-  StyledForm,
+  StyledAuthForm,
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -59,7 +59,7 @@ const Login = () => {
   return (
     <>
       <StyledAuthContainer>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledAuthForm onSubmit={handleSubmit}>
           <LabelInputContainer>
             <StyledLabel>Email</StyledLabel>
             <StyledInput
@@ -84,7 +84,7 @@ const Login = () => {
           <StyledButton>Login</StyledButton>
           <span>Dont have an account?</span>
           <Link to="/register">Register</Link>
-        </StyledForm>
+        </StyledAuthForm>
       </StyledAuthContainer>
     </>
   );

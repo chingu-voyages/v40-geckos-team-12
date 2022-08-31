@@ -18,8 +18,10 @@ export const StyledLabel = styled.label`
 export const StyledAuthContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.theme.modalBG};
-  max-width: 60%;
+  width: 100%;
+  height: 100vh;
 `;
 export const StyledFormContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
@@ -37,6 +39,13 @@ export const StyledFormContainer = styled.div`
     width: 343px;
   }
 `;
+
+export const StyledAuthForm = styled.form`
+  border: 2px red solid;
+  padding: 2em;
+  height: fit-content;
+`;
+
 export const StyledForm = styled.form`
   /* position: absolute; */
 `;
