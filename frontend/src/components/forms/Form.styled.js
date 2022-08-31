@@ -49,6 +49,11 @@ export const StyledAuthForm = styled.form`
   height: fit-content;
   background: #fff;
   width: 375px;
+
+  @media (max-width: 375px){
+    width: 325px;
+    padding: 1em;
+  }
 `;
 
 export const StyledForm = styled.form`
