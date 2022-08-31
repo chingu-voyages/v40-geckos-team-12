@@ -26,6 +26,8 @@ import Login from "./login/Login";
 
 import Register from "./register/Register";
 
+import ProtectedRoute from "./protectedRoute/ProtectedRoute";
+
 export {
   Card,
   Column,
@@ -42,4 +44,5 @@ export {
   MobileSidebar,
   Login,
   Register,
+  ProtectedRoute,
 };
