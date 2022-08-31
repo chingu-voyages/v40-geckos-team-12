@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {
   Column,
@@ -21,6 +22,8 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "themes/themes";
 import { selectIsLightTheme } from "features/slices/themeSlice/themeSlice";
 
+import { selectIsLoggedIn } from "features/slices/userSlice/userSlice";
+
 import {
   selectTodoTasks,
   selectDoingTasks,
@@ -30,10 +33,15 @@ import {
 
 function Home() {
   const isLightTheme = useSelector(selectIsLightTheme);
+
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   const [cardModalToggle, setCardModalToggle] = useState(false);
+
   const [modalTask, setModaltask] = useState({});
 
   const [showAddTaskModal, setShowAddTaskModal] = useState(false);
+
   const [showEditTaskModal, setShowEditTaskModal] = useState(false);
 
   const [MobileModalToggle, setMobileModalToggle] = useState(false);
@@ -42,6 +50,7 @@ function Home() {
   const doingTasks = useSelector(selectDoingTasks);
   const doneTasks = useSelector(selectDoneTasks);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleCardModalToggle(task) {
     setModaltask(task);
@@ -60,6 +69,9 @@ function Home() {
   }
 
   useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/login");
+    }
     dispatch(getTasks());
   }, []);
 

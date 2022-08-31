@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 import {
@@ -82,14 +83,17 @@ const Register = () => {
           <LabelInputContainer>
             <StyledLabel>Password</StyledLabel>
             <StyledInput
-              type="text"
+              type="password"
               value={form.password}
               onChange={(e) => {
                 setForm({ ...form, password: e.target.value });
               }}
             />
           </LabelInputContainer>
-
+          <Link to="/login">Login</Link>
+          {/* Needs styling */}
+          <br />
+          <span>Already have an account?</span>
           <StyledButton>Register</StyledButton>
         </StyledForm>
       </StyledAuthContainer>
