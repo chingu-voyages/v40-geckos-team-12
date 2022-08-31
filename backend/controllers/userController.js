@@ -19,7 +19,7 @@ module.exports = {
         console.log("match");
         const payload = {
           user: {
-            id: user.id,
+            id: user._id,
             name: user.name,
             email: user.email,
           },
@@ -30,7 +30,7 @@ module.exports = {
           { expiresIn: 3600 },
           (err, token) => {
             if (err) throw err;
-            res.json({ status: "success", token, payload });
+            res.json({ status: "success", token });
           }
         );
       }
