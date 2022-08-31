@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { login } from "../../features/slices/userSlice/userSlice";
 import axios from "axios";
 
@@ -34,11 +36,12 @@ const Login = () => {
         "http://localhost:4000/user/login",
         form
       );
-      console.log(data);
 
       if (data.status === "success") {
         const decodedToken = decodeToken(data.token);
-        dispatch(login({ decodedToken, token: data.token }));
+        const { user } = decodedToken;
+
+        dispatch(login({ user, token: data.token }));
         navigate("/");
       } else {
         console.log("inside else");
@@ -70,7 +73,7 @@ const Login = () => {
           <LabelInputContainer>
             <StyledLabel>Password</StyledLabel>
             <StyledInput
-              type="text"
+              type="password"
               value={form.password}
               onChange={(e) => {
                 setForm({ ...form, password: e.target.value });
@@ -79,6 +82,8 @@ const Login = () => {
           </LabelInputContainer>
 
           <StyledButton>Login</StyledButton>
+          <span>Dont have an account?</span>
+          <Link to="/register">Register</Link>
         </StyledForm>
       </StyledAuthContainer>
     </>
