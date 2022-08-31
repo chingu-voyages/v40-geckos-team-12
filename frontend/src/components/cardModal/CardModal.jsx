@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { CheckBox } from "../../components";
 import {
@@ -39,6 +40,7 @@ const CardModal = ({
   // Set state based on a specific card/task
 
   const [currentTask, setCurrentTask] = useState(modalTask);
+
   const [openEditModal, setOpenEditModal] = useState(false);
 
   // updates the task.status state when a dropdown option is selected and dispatches it
@@ -46,10 +48,10 @@ const CardModal = ({
     e.preventDefault();
     if (e.target.value === "Doing") {
       setCurrentTask({ ...currentTask, status: e.target.value });
-      dispatch(move_from_todo_to_doing(currentTask.id));
+      dispatch(move_from_todo_to_doing(currentTask._id));
     } else if (e.target.value === "Done") {
       setCurrentTask({ ...currentTask, status: e.target.value });
-      dispatch(move_from_doing_to_done(currentTask.id));
+      dispatch(move_from_doing_to_done(currentTask._id));
     }
   };
 
@@ -67,14 +69,18 @@ const CardModal = ({
     setChecked(subTaskStatus);
   }
 
-  const handleDelete = (id) => {
-    dispatch(removeTask(id));
+  const handleDelete = async (id) => {
+    try {
+      const { data } = await axios.delete(`http://localhost:4000/tasks/${id}`);
+      dispatch(removeTask(data.id));
+    } catch (error) {
+      console.log(error);
+    }
     setOpenEditModal(false);
     handleCardModalToggle();
   };
 
-  const handleEdit = (id) => {
-    console.log(id);
+  const handleEdit = async (id) => {
     setOpenEditModal(false);
     handleCardModalToggle();
     dispatch(get_single_task(id));
@@ -96,11 +102,11 @@ const CardModal = ({
           </TitleKebabContainer>
           {openEditModal && (
             <EditOrDeleteWrapper>
-              <EditOrDeleteLabel onClick={() => handleEdit(currentTask.id)}>
+              <EditOrDeleteLabel onClick={() => handleEdit(currentTask._id)}>
                 Edit
               </EditOrDeleteLabel>
               <EditOrDeleteLabel
-                onClick={() => handleDelete(currentTask.id)}
+                onClick={() => handleDelete(currentTask._id)}
                 warning
               >
                 Delete

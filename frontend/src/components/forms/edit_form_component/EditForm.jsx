@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import iconCross from "../../../assets/icon-cross.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -22,7 +23,7 @@ import {
 
 const EditForm = ({ handleEditTaskModalToggle }) => {
   // Gets the single task object from redux
-  const singleTask = useSelector(selectSingleTask);
+  let singleTask = useSelector(selectSingleTask);
 
   // Sets the single task state to the single task from redux
   const [taskData, setTaskData] = useState(singleTask);
@@ -55,16 +56,28 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
     setSubTask(newSubTasks);
   };
 
-  const submitEditTaskForm = (e) => {
+  const submitEditTaskForm = async (e, id) => {
     e.preventDefault();
     setTaskData({ ...taskData, subtasks: subTasks });
-    dispatch(editTask({ ...taskData, subtasks: subTasks }));
+
+    try {
+      const { data } = await axios.put(`http://localhost:4000/tasks/${id}`, {
+        ...taskData,
+        subtasks: subTasks,
+      });
+      dispatch(editTask(data));
+    } catch {
+      console.log("error");
+    }
+
     handleEditTaskModalToggle();
+
+    // send a put request ad update the database with the new task data.
   };
   return (
     <StyledFormContainer onClick={(e) => e.stopPropagation()}>
       <StyledFormHeader>Edit Task</StyledFormHeader>
-      <StyledForm onSubmit={submitEditTaskForm}>
+      <StyledForm onSubmit={(e) => submitEditTaskForm(e, taskData._id)}>
         <LabelInputContainer>
           <StyledLabel>Title</StyledLabel>
           <StyledInput
@@ -89,22 +102,27 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
 
         <LabelInputContainer>
           <StyledLabel>Subtasks</StyledLabel>
-          {subTasks?.map((text, index) => (
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <StyledInput
-                value={text}
-                onChange={(e) => handleEditedSubTask(e, index)}
-                type="text"
-              />
-              <div style={{ padding: "0 6px" }}>
-                <img
-                  src={iconCross}
-                  alt="delete-icon"
-                  onClick={() => removeSubtask(index)}
-                />
-              </div>
-            </div>
-          ))}
+          {subTasks.length
+            ? subTasks.map((text, index) => (
+                <div
+                  key={index}
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <StyledInput
+                    value={text}
+                    onChange={(e) => handleEditedSubTask(e, index)}
+                    type="text"
+                  />
+                  <div style={{ padding: "0 6px" }}>
+                    <img
+                      src={iconCross}
+                      alt="delete-icon"
+                      onClick={() => removeSubtask(index)}
+                    />
+                  </div>
+                </div>
+              ))
+            : null}
 
           <StyledInput
             value={newValue}
