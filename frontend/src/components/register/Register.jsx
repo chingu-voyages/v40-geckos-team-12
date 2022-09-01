@@ -12,7 +12,7 @@ import {
   StyledAuthForm,
   LogoIcon,
   LogoSpan,
-  AccountDiv
+  AccountDiv,
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -32,7 +32,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}user/register`,
+        `${process.env.REACT_APP_BASE_URL}/user/register`,
         form
       );
       if (data.status === "success") {
@@ -53,7 +53,10 @@ const Register = () => {
     <>
       <StyledAuthContainer>
         <StyledAuthForm onSubmit={handleSubmit}>
-        <LogoSpan><LogoIcon />Kanban</LogoSpan>
+          <LogoSpan>
+            <LogoIcon />
+            Kanban
+          </LogoSpan>
           <LabelInputContainer>
             <StyledLabel>Name</StyledLabel>
             <StyledInput
