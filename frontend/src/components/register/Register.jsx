@@ -9,7 +9,10 @@ import {
   StyledInput,
   StyledLabel,
   StyledButton,
-  StyledForm,
+  StyledAuthForm,
+  LogoIcon,
+  LogoSpan,
+  AccountDiv
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -49,7 +52,8 @@ const Register = () => {
   return (
     <>
       <StyledAuthContainer>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledAuthForm onSubmit={handleSubmit}>
+        <LogoSpan><LogoIcon />Kanban</LogoSpan>
           <LabelInputContainer>
             <StyledLabel>Name</StyledLabel>
             <StyledInput
@@ -90,12 +94,12 @@ const Register = () => {
               }}
             />
           </LabelInputContainer>
-          <Link to="/login">Login</Link>
-          {/* Needs styling */}
-          <br />
-          <span>Already have an account?</span>
           <StyledButton>Register</StyledButton>
-        </StyledForm>
+          <AccountDiv>
+            <span>Already have an account?</span>
+            <Link to="/login">Login</Link>
+          </AccountDiv>
+        </StyledAuthForm>
       </StyledAuthContainer>
     </>
   );
