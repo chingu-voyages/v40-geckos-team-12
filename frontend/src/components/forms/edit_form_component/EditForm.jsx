@@ -62,7 +62,7 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
 
     try {
       const { data } = await axios.put(
-        `${process.env.REACT_APP_BASE_URL}tasks/${id}`,
+        `${process.env.REACT_APP_BASE_URL}/tasks/${id}`,
         {
           ...taskData,
           subtasks: subTasks,

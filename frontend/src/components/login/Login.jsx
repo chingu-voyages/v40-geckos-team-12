@@ -17,7 +17,7 @@ import {
   StyledAuthForm,
   LogoIcon,
   LogoSpan,
-  AccountDiv
+  AccountDiv,
 } from "../forms/Form.styled";
 
 //"../../Form.styled";
@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}user/login`,
+        `${process.env.REACT_APP_BASE_URL}/user/login`,
         form
       );
 
@@ -63,7 +63,10 @@ const Login = () => {
     <>
       <StyledAuthContainer>
         <StyledAuthForm onSubmit={handleSubmit}>
-        <LogoSpan><LogoIcon />Kanban</LogoSpan>
+          <LogoSpan>
+            <LogoIcon />
+            Kanban
+          </LogoSpan>
           <LabelInputContainer>
             <StyledLabel>Email</StyledLabel>
             <StyledInput
@@ -87,8 +90,8 @@ const Login = () => {
 
           <StyledButton>Login</StyledButton>
           <AccountDiv>
-          <span>Dont have an account?</span>
-          <Link to="/register">Register</Link>
+            <span>Dont have an account?</span>
+            <Link to="/register">Register</Link>
           </AccountDiv>
         </StyledAuthForm>
       </StyledAuthContainer>
