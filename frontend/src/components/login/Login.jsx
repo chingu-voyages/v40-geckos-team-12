@@ -36,7 +36,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/user/login`,
+        `${process.env.REACT_APP_BASE_URL}user/login`,
         form
       );
 
