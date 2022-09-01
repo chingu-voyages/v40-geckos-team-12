@@ -71,7 +71,9 @@ const CardModal = ({
 
   const handleDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`http://localhost:4000/tasks/${id}`);
+      const { data } = await axios.delete(
+        `${process.env.REACT_APP_BASE_URL}tasks/${id}`
+      );
       dispatch(removeTask(data.id));
     } catch (error) {
       console.log(error);

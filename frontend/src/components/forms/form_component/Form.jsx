@@ -36,7 +36,7 @@ const Form = ({ handleCreateTaskModalToggle }) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/tasks",
+        `${process.env.REACT_APP_BASE_URL}tasks`,
         newTaskData
       );
       dispatch(addTask(data));

@@ -33,7 +33,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/user/login",
+        `${process.env.REACT_APP_BASE_URL}user/login`,
         form
       );
 

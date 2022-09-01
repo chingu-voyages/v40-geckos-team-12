@@ -61,10 +61,13 @@ const EditForm = ({ handleEditTaskModalToggle }) => {
     setTaskData({ ...taskData, subtasks: subTasks });
 
     try {
-      const { data } = await axios.put(`http://localhost:4000/tasks/${id}`, {
-        ...taskData,
-        subtasks: subTasks,
-      });
+      const { data } = await axios.put(
+        `${process.env.REACT_APP_BASE_URL}tasks/${id}`,
+        {
+          ...taskData,
+          subtasks: subTasks,
+        }
+      );
       dispatch(editTask(data));
     } catch {
       console.log("error");
