@@ -32,7 +32,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/user/register`,
+        `${process.env.REACT_APP_BASE_URL}user/register`,
         form
       );
       if (data.status === "success") {
