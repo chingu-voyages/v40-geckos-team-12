@@ -15,4 +15,10 @@ export const ToggleContainer = styled.div`
   @media (max-width: 768px){
     width: 11em;
   }
+
+  @media (max-width: 500px){
+    bottom: 1em;
+    margin-inline: 1em;
+    width: 235px;
+  }
 `;

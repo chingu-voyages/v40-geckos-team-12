@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { ListContainer, Brand, Container, SpanBoard } from "./Sidebar.styled";
 import { ListItem, ToggleSwitch } from "../../components";
-import lightThemeLogo from "../../assets/logo-light.svg";
-import darkThemeLogo from "../../assets/logo-dark.svg";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+
+import { toggleTheme } from "../../features/slices/themeSlice/themeSlice";
 
 import iconBoard from "../../assets/icon-board.svg";
-import {
-  toggleTheme,
-  selectIsLightTheme,
-} from "../../features/slices/themeSlice/themeSlice";
 
-const Sidenav = () => {
-  const [checked, setChecked] = useState(false);
+import {
+  Container,
+  SpanBoard,
+  ListContainer,
+  Wrapper,
+} from "./MobileSidebar.styled";
+
+const MobileSidebar = () => {
   const dispatch = useDispatch();
-  const isLightTheme = useSelector(selectIsLightTheme);
   const [position, setPosition] = useState(-1);
   const texts = ["Platform launch", "Marketing plan", "Roadmap"];
 
@@ -27,15 +27,8 @@ const Sidenav = () => {
   };
 
   return (
-    <>
+    <Wrapper>
       <Container>
-        <Brand>
-          <img
-            src={isLightTheme ? darkThemeLogo : lightThemeLogo}
-            style={{ color: "white" }}
-            alt=""
-          />
-        </Brand>
         <SpanBoard style={{ color: "#828FA3" }}>All boards</SpanBoard>
         <ListContainer>
           {texts.map((item, index) => (
@@ -51,8 +44,8 @@ const Sidenav = () => {
 
         <ToggleSwitch handleToggle={handleToggle} />
       </Container>
-    </>
+    </Wrapper>
   );
 };
 
-export default Sidenav;
+export default MobileSidebar;

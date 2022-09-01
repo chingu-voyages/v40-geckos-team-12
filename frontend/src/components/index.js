@@ -4,6 +4,8 @@ import Column from "./column/Column";
 
 import Navbar from "./Navbar/Navbar";
 
+import MobileSidebar from "./MobileSidebar/MobileSidebar";
+
 import ListItem from "./Sidebar/sideBarListItem/ListItem";
 
 import SidebarContainer from "./SidebarContainer/SidebarContainer";
@@ -20,6 +22,12 @@ import EditTaskModal from "./forms/edit_task_modal/EditTaskModal";
 
 import EditForm from "./forms/edit_form_component/EditForm";
 
+import Login from "./login/Login";
+
+import Register from "./register/Register";
+
+import ProtectedRoute from "./protectedRoute/ProtectedRoute";
+
 export {
   Card,
   Column,
@@ -33,4 +41,8 @@ export {
   AddTaskModal,
   EditTaskModal,
   EditForm,
+  MobileSidebar,
+  Login,
+  Register,
+  ProtectedRoute,
 };

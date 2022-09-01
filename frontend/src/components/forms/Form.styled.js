@@ -1,8 +1,10 @@
 //import styled components
 import styled from "styled-components";
+import { ReactComponent as Logo } from "../../assets/logo-mobile.svg";
 
 export const StyledFormHeader = styled.h2`
   color: ${(props) => props.theme.fontColor};
+  ${({ login }) => (login ? "text-align: center;" : null)}
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -14,7 +16,14 @@ export const StyledLabel = styled.label`
   line-height: 15px;
   display: block;
 `;
-
+export const StyledAuthContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F7FD;
+  width: 100%;
+  height: 100vh;
+`;
 export const StyledFormContainer = styled.div`
   background-color: ${(props) => props.theme.modalBG};
   max-width: 450px;
@@ -26,12 +35,27 @@ export const StyledFormContainer = styled.div`
   padding: 2rem;
 
   @media (max-width: 768px) {
-
   }
   @media (max-width: 480px) {
     width: 343px;
   }
 `;
+
+export const StyledAuthForm = styled.form`
+  border: 1px solid #828FA3;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px 0px rgba(54, 78, 126, 0.15);
+  padding: 2em;
+  height: fit-content;
+  background: #fff;
+  width: 375px;
+
+  @media (max-width: 375px){
+    width: 325px;
+    padding: 1em;
+  }
+`;
+
 export const StyledForm = styled.form`
   /* position: absolute; */
 `;
@@ -120,4 +144,22 @@ export const StyledSelect = styled.select`
 `;
 export const StyledOption = styled.option`
   color: ${(props) => props.theme.fontColor};
+`;
+
+export const LogoIcon = styled(Logo)`
+margin-right: 10px;
+`;
+
+export const LogoSpan = styled.div`
+  display: flex;
+  font-size: 25px;
+  align-items: center;
+  justify-content: center;
+  color: ${(props) => props.theme.fontColor};
+`;
+
+export const AccountDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
 `;
