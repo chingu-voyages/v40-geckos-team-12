@@ -4,7 +4,7 @@ export const ToggleContainer = styled.div`
   border-radius: 6px;
   background-color: ${(props) => props.theme.mainContainer};
   position: absolute;
-  bottom: 88px;
+  bottom: 40px;
   width: 15em;
   height: 48px;
   display: flex;
