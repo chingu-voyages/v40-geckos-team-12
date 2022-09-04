@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "features/slices/userSlice/userSlice";
 import {
@@ -14,6 +14,9 @@ import {
   IconChevronUp,
   IconChevronDown,
   Chevron,
+  NameSpan,
+  LogoutWrapper,
+  LogoutButton
 } from "./Navbar.Styled";
 
 const Navbar = ({
@@ -25,20 +28,22 @@ const Navbar = ({
   const handleLogout = () => {
     dispatch(logout());
   };
+
+  const [openLogoutModal, setOpenLogoutModal] = useState(false);
   return (
     <>
       <NavContainer>
         <TitleContainer>
           <LogoIcon />
           <NavTitle>Platform Launch</NavTitle>
-          <span>
-            Hello name - <span onClick={handleLogout}>Logout</span>
-          </span>
           <Chevron
             onClick={() => handleMobileModalToggle((previous) => !previous)}
           >
             {MobileModalToggle ? <IconChevronUp /> : <IconChevronDown />}
           </Chevron>
+          <NameSpan>
+            Hello, name!
+          </NameSpan>
         </TitleContainer>
         <NavButtonWrapper>
           <NavButton
@@ -47,7 +52,14 @@ const Navbar = ({
             <PlusIcon />
             <TaskSpan>+ Add New Task</TaskSpan>
           </NavButton>
-          <KebabIcon />
+          <KebabIcon onClick={() => setOpenLogoutModal((previous) => !previous)}/>
+          {openLogoutModal && (
+            <LogoutWrapper>
+              <LogoutButton onClick={handleLogout} >
+                Logout 
+              </LogoutButton>
+            </LogoutWrapper>
+          )}
         </NavButtonWrapper>
       </NavContainer>
     </>

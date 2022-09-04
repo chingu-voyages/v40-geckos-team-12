@@ -67,7 +67,9 @@ export const NavMenuIcon = styled.span`
   color: black;
 `;
 
-export const KebabIcon = styled(Kebab)``;
+export const KebabIcon = styled(Kebab)`
+  cursor: pointer;
+`;
 
 export const LogoIcon = styled(Logo)`
 @media (min-width: 500px){
@@ -111,4 +113,41 @@ export const TitleContainer = styled.div`
   display: flex;
   gap: 1em;
   align-items: center;
+`;
+
+export const NameSpan = styled.div`
+  color: ${(props) => props.theme.fontColor};
+  display: flex;
+  align-items: center;
+`;
+
+export const LogoutWrapper = styled.div`
+  height: 80px;
+  width: 130px;
+  position: absolute;
+  top: 85px;
+  right: 40px;
+  background-color: ${(props) => props.theme.main};
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid ${(props) => props.theme.subTaskBG};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LogoutButton = styled.button`
+color: white;
+cursor: pointer;
+font-size: 18px;
+background: #635FC7;
+padding: 5px 10px;
+border-radius: 10px;
+border: none;
+font-weight: bold;
+
+&:hover {
+  background-color: #A8A4FF;
+  transition: background-color 0.4s ease;
+}
 `
