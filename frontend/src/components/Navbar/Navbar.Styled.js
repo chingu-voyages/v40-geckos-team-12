@@ -113,12 +113,20 @@ export const TitleContainer = styled.div`
   display: flex;
   gap: 1em;
   align-items: center;
+
+  @media (max-width: 768px){
+    gap: .5em;
+  }
 `;
 
 export const NameSpan = styled.div`
   color: ${(props) => props.theme.fontColor};
   display: flex;
   align-items: center;
+
+  @media (max-width: 425px){
+    display: none;
+  }
 `;
 
 export const LogoutWrapper = styled.div`
@@ -134,6 +142,16 @@ export const LogoutWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px){
+    top: 70px;
+    right: 50px;
+  }
+
+  @media (max-width: 425px){
+    top: 60px;
+    right: 30px;
+  }
 `;
 
 export const LogoutButton = styled.button`

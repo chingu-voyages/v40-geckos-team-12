@@ -21,7 +21,7 @@ export const Container = styled.div`
   position: relative;
   border-radius: 6px;
   margin: 0 auto;
-  top: 40%;
+  top: 55%;
   transform: translateY(-85%);
   height: 322px;
   padding: 1em 0;
