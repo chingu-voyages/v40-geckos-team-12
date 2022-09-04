@@ -112,7 +112,7 @@ export const TaskSpan = styled.span`
 export const TitleContainer = styled.div`
   display: flex;
   gap: 1em;
-  align-items: center;
+  align-items: baseline;
 
   @media (max-width: 768px){
     gap: .5em;

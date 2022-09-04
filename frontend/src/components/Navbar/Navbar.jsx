@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { logout } from "features/slices/userSlice/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "features/slices/userSlice/userSlice";
 import {
   NavContainer,
   NavTitle,
@@ -28,6 +28,8 @@ const Navbar = ({
   const handleLogout = () => {
     dispatch(logout());
   };
+  
+  const user = useSelector(selectUser);
 
   const [openLogoutModal, setOpenLogoutModal] = useState(false);
   return (
@@ -42,7 +44,7 @@ const Navbar = ({
             {MobileModalToggle ? <IconChevronUp /> : <IconChevronDown />}
           </Chevron>
           <NameSpan>
-            Hello, name!
+            Hello, {user.name}!
           </NameSpan>
         </TitleContainer>
         <NavButtonWrapper>
