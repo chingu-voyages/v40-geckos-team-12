@@ -35,6 +35,7 @@ const CardModal = ({
 }) => {
   // Gives us an array of task objects
   const tasks = useSelector(selectTasks);
+
   // Redux
   const dispatch = useDispatch();
   // Set state based on a specific card/task
@@ -118,8 +119,7 @@ const CardModal = ({
 
           <CardDescription>{currentTask.description}</CardDescription>
           <SubTaskTitle>
-            Subtasks ({currentTask.subtasks.length} of
-            {currentTask.subtasks.length})
+            Subtasks ({checked.length} of {currentTask.subtasks.length})
           </SubTaskTitle>
           <SubTaskContainer>
             {currentTask.subtasks?.map((subtask, index) => (

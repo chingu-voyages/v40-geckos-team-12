@@ -140,6 +140,9 @@ export const StyledSelect = styled.select`
   padding: 0.75em;
   margin-top: 0.5rem;
   border-radius: 4px;
+  background-color: ${(props) => props.theme.modalBG};
+  border: 1px solid ${(props) => props.theme.fontColor};
+  color: ${(props) => props.theme.fontColor};
   &:focus {
     outline: none;
     border: 1px solid ${(props) => props.theme.fontColorHover};

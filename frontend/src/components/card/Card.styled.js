@@ -41,3 +41,8 @@ export const CardDescription = styled.p`
   letter-spacing: 0px;
   text-align: left;
 `;
+
+export const CardSubtask = styled.p`
+  color: ${(props) => props.theme.labelColor};
+  font-size: 12px;
+`;
