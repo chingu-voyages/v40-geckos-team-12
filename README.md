@@ -19,6 +19,7 @@ mode toggle based on Frontend Mentor's Kanban task management web app challenge.
 - Styled Components
 - Express
 - MongoDB
+- Mongoose
 
 
 ## Demo
