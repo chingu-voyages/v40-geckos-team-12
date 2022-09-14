@@ -38,7 +38,8 @@ export const darkTheme = {
   fontColor: "#fff",
   secondFontColor: "#828FA3",
   fontColorHover: "#635FC7",
-  labelColor: "A8A4FF",
+  labelColor: "#828FA3",
+  labelHover: "#A8A4FF",
   boardHover: "#FFF",
 
   //createSubTask colors

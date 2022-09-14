@@ -1,14 +1,40 @@
-# voyage-tasks
+# Kanban Task Management
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+This is a fully-functional task management app with a light/dark 
+mode toggle based on Frontend Mentor's Kanban task management web app challenge.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
 
-> Own it & Make it your Own!
+
+
+## Screenshots
+
+![App Screenshot](https://www.dropbox.com/s/amcznjb5jbcntyd/Desktop%20-%20Board%20-%20Dark%20%281%29.jpg?raw=1)
+
+
+## Tech Stack
+
+- React 
+- Redux 
+- Styled Components
+- Express
+- MongoDB
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+## Deployment
+
+[Link to live site](https://merry-gecko-5531a6.netlify.app/)
+
+
+## Authors
+
+- [@LloydRivers](https://github.com/LloydRivers)
+- [@MorganBare](https://github.com/MorganBare)
+- [@ayanwumi101](https://github.com/ayanwumi101)
+- [@Simplystina](https://github.com/Simplystina)
+

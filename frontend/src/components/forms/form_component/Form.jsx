@@ -20,8 +20,11 @@ const Form = ({ handleCreateTaskModalToggle }) => {
     title: "",
     description: "",
     subtasks: [],
+    completed_subtasks: [1],
     status: "",
   });
+
+  console.log(newTaskData.completed_subtasks)
 
   const [subTask, setSubTask] = useState("");
   const dispatch = useDispatch();
@@ -48,6 +51,7 @@ const Form = ({ handleCreateTaskModalToggle }) => {
       title: "",
       description: "",
       subtasks: [],
+      completed_subtasks: [],
       status: "",
     });
     handleCreateTaskModalToggle();
